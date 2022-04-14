@@ -1,0 +1,13 @@
+# python
+*/__pycache__
+/__pycache__
+
+# editor
+.vscode/
+
+# OS
+**/.DS_Store
+.DS_Store?
+*~
+.~*#
+.*.swp

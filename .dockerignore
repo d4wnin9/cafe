@@ -1,0 +1,23 @@
+README.md
+
+# git
+.git/
+.gitignore
+
+# docker
+.dockerignore
+docker-compose.yml
+
+# python
+*/__pycache__
+/__pycache__
+
+# editor
+.vscode/
+
+# OS
+**/.DS_Store
+.DS_Store?
+*~
+.~*#
+.*.swp

@@ -1,0 +1,29 @@
+version: '3'
+services:
+  database:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=cafe
+      - POSTGRES_PASSWORD=cafe
+      - POSTGRES_DB=cafe
+    volumes:
+      - database-data:/var/lib/postgresql/data
+      # - type: bind
+      #   source: ./database-data
+      #   target: /var/lib/postgresql/data
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    depends_on:
+      - database
+    ports:
+      - '80:80'
+    volumes:
+      - cafe:/var/www/app/cafe
+      - type: bind
+        source: ./cafe
+        target: /var/www/app/cafe
+volumes:
+  database-data:
+  cafe:
