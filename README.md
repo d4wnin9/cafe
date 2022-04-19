@@ -3,6 +3,7 @@ HAMADApp
 
 ## Requirements
 - docker [install/ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+- docker-compose [github](https://github.com/docker/compose/releases)
 
 ## Getting started
 ```bash
