@@ -1,3 +1,6 @@
+wheel
 Flask
 Jinja2
-SQLAlchemy
+Flask-Login
+Flask-SQLAlchemy
+psycopg2-binary

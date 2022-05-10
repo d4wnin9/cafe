@@ -1,0 +1,112 @@
+[Tue May 10 15:54:19.542367 2022] [wsgi:info] [pid 9:tid 139916270689344] mod_wsgi (pid=9): Attach interpreter ''.
+[Tue May 10 15:54:19.553305 2022] [wsgi:debug] [pid 9:tid 139916242376448] src/server/mod_wsgi.c(9115): mod_wsgi (pid=9): Started thread 0 in daemon process 'cafe'.
+[Tue May 10 15:54:19.553399 2022] [wsgi:debug] [pid 9:tid 139916225591040] src/server/mod_wsgi.c(9115): mod_wsgi (pid=9): Started thread 2 in daemon process 'cafe'.
+[Tue May 10 15:54:19.553316 2022] [wsgi:debug] [pid 9:tid 139916233983744] src/server/mod_wsgi.c(9115): mod_wsgi (pid=9): Started thread 1 in daemon process 'cafe'.
+[Tue May 10 15:54:19.553514 2022] [wsgi:debug] [pid 9:tid 139916208805632] src/server/mod_wsgi.c(9115): mod_wsgi (pid=9): Started thread 4 in daemon process 'cafe'.
+[Tue May 10 15:54:19.553459 2022] [wsgi:debug] [pid 9:tid 139916217198336] src/server/mod_wsgi.c(9115): mod_wsgi (pid=9): Started thread 3 in daemon process 'cafe'.
+[Tue May 10 15:54:22.368909 2022] [authz_core:debug] [pid 10:tid 139916250769152] mod_authz_core.c(817): [client 100.102.187.117:53954] AH01626: authorization result of Require all granted: granted, referer: http://z600:8080/
+[Tue May 10 15:54:22.368985 2022] [authz_core:debug] [pid 10:tid 139916250769152] mod_authz_core.c(817): [client 100.102.187.117:53954] AH01626: authorization result of <RequireAny>: granted, referer: http://z600:8080/
+[Tue May 10 15:54:22.369159 2022] [authz_core:debug] [pid 10:tid 139916250769152] mod_authz_core.c(817): [client 100.102.187.117:53954] AH01626: authorization result of Require all granted: granted, referer: http://z600:8080/
+[Tue May 10 15:54:22.369192 2022] [authz_core:debug] [pid 10:tid 139916250769152] mod_authz_core.c(817): [client 100.102.187.117:53954] AH01626: authorization result of <RequireAny>: granted, referer: http://z600:8080/
+[Tue May 10 15:54:22.369808 2022] [wsgi:info] [pid 9:tid 139916242376448] [remote 100.102.187.117:53954] mod_wsgi (pid=9, process='cafe', application=''): Loading Python script file '/var/www/app/cafe.wsgi'.
+[Tue May 10 15:54:23.067974 2022] [wsgi:error] [pid 9:tid 139916242376448] /usr/local/lib/python3.8/dist-packages/flask_sqlalchemy/__init__.py:872: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+[Tue May 10 15:54:23.068082 2022] [wsgi:error] [pid 9:tid 139916242376448]   warnings.warn(FSADeprecationWarning(
+[Tue May 10 15:54:23.144978 2022] [deflate:debug] [pid 10:tid 139916250769152] mod_deflate.c(854): [client 100.102.187.117:53954] AH01384: Zlib: Compressed 464 to 284 : URL /login, referer: http://z600:8080/
+[Tue May 10 15:54:27.667978 2022] [authz_core:debug] [pid 10:tid 139916242376448] mod_authz_core.c(817): [client 100.102.187.117:53954] AH01626: authorization result of Require all granted: granted, referer: http://z600:8080/login
+[Tue May 10 15:54:27.668088 2022] [authz_core:debug] [pid 10:tid 139916242376448] mod_authz_core.c(817): [client 100.102.187.117:53954] AH01626: authorization result of <RequireAny>: granted, referer: http://z600:8080/login
+[Tue May 10 15:54:27.668207 2022] [authz_core:debug] [pid 10:tid 139916242376448] mod_authz_core.c(817): [client 100.102.187.117:53954] AH01626: authorization result of Require all granted: granted, referer: http://z600:8080/login
+[Tue May 10 15:54:27.668232 2022] [authz_core:debug] [pid 10:tid 139916242376448] mod_authz_core.c(817): [client 100.102.187.117:53954] AH01626: authorization result of <RequireAny>: granted, referer: http://z600:8080/login
+[Tue May 10 15:54:27.706356 2022] [wsgi:error] [pid 9:tid 139916217198336] [remote 100.102.187.117:53954] [2022-05-10 15:54:27,690] ERROR in app: Exception on /login [POST]
+[Tue May 10 15:54:27.706427 2022] [wsgi:error] [pid 9:tid 139916217198336] [remote 100.102.187.117:53954] Traceback (most recent call last):
+[Tue May 10 15:54:27.706447 2022] [wsgi:error] [pid 9:tid 139916217198336] [remote 100.102.187.117:53954]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 2077, in wsgi_app
+[Tue May 10 15:54:27.706485 2022] [wsgi:error] [pid 9:tid 139916217198336] [remote 100.102.187.117:53954]     response = self.full_dispatch_request()
+[Tue May 10 15:54:27.706501 2022] [wsgi:error] [pid 9:tid 139916217198336] [remote 100.102.187.117:53954]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1525, in full_dispatch_request
+[Tue May 10 15:54:27.706517 2022] [wsgi:error] [pid 9:tid 139916217198336] [remote 100.102.187.117:53954]     rv = self.handle_user_exception(e)
+[Tue May 10 15:54:27.706532 2022] [wsgi:error] [pid 9:tid 139916217198336] [remote 100.102.187.117:53954]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1523, in full_dispatch_request
+[Tue May 10 15:54:27.706549 2022] [wsgi:error] [pid 9:tid 139916217198336] [remote 100.102.187.117:53954]     rv = self.dispatch_request()
+[Tue May 10 15:54:27.706565 2022] [wsgi:error] [pid 9:tid 139916217198336] [remote 100.102.187.117:53954]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1509, in dispatch_request
+[Tue May 10 15:54:27.706581 2022] [wsgi:error] [pid 9:tid 139916217198336] [remote 100.102.187.117:53954]     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+[Tue May 10 15:54:27.706596 2022] [wsgi:error] [pid 9:tid 139916217198336] [remote 100.102.187.117:53954]   File "/var/www/app/cafe/view.py", line 42, in login
+[Tue May 10 15:54:27.706621 2022] [wsgi:error] [pid 9:tid 139916217198336] [remote 100.102.187.117:53954]     return flask.redirect(flask.url_for('/'))
+[Tue May 10 15:54:27.706637 2022] [wsgi:error] [pid 9:tid 139916217198336] [remote 100.102.187.117:53954]   File "/usr/local/lib/python3.8/dist-packages/flask/helpers.py", line 336, in url_for
+[Tue May 10 15:54:27.706654 2022] [wsgi:error] [pid 9:tid 139916217198336] [remote 100.102.187.117:53954]     return appctx.app.handle_url_build_error(error, endpoint, values)
+[Tue May 10 15:54:27.706669 2022] [wsgi:error] [pid 9:tid 139916217198336] [remote 100.102.187.117:53954]   File "/usr/local/lib/python3.8/dist-packages/flask/helpers.py", line 323, in url_for
+[Tue May 10 15:54:27.706685 2022] [wsgi:error] [pid 9:tid 139916217198336] [remote 100.102.187.117:53954]     rv = url_adapter.build(
+[Tue May 10 15:54:27.706700 2022] [wsgi:error] [pid 9:tid 139916217198336] [remote 100.102.187.117:53954]   File "/usr/local/lib/python3.8/dist-packages/werkzeug/routing.py", line 2307, in build
+[Tue May 10 15:54:27.706716 2022] [wsgi:error] [pid 9:tid 139916217198336] [remote 100.102.187.117:53954]     raise BuildError(endpoint, values, method, self)
+[Tue May 10 15:54:27.706733 2022] [wsgi:error] [pid 9:tid 139916217198336] [remote 100.102.187.117:53954] werkzeug.routing.BuildError: Could not build url for endpoint '/'. Did you mean 'register' instead?
+[Tue May 10 15:55:16.110302 2022] [wsgi:info] [pid 9:tid 140247790607424] mod_wsgi (pid=9): Attach interpreter ''.
+[Tue May 10 15:55:16.122778 2022] [wsgi:debug] [pid 9:tid 140247762294528] src/server/mod_wsgi.c(9115): mod_wsgi (pid=9): Started thread 0 in daemon process 'cafe'.
+[Tue May 10 15:55:16.122827 2022] [wsgi:debug] [pid 9:tid 140247753901824] src/server/mod_wsgi.c(9115): mod_wsgi (pid=9): Started thread 1 in daemon process 'cafe'.
+[Tue May 10 15:55:16.122952 2022] [wsgi:debug] [pid 9:tid 140247745509120] src/server/mod_wsgi.c(9115): mod_wsgi (pid=9): Started thread 2 in daemon process 'cafe'.
+[Tue May 10 15:55:16.123005 2022] [wsgi:debug] [pid 9:tid 140247737116416] src/server/mod_wsgi.c(9115): mod_wsgi (pid=9): Started thread 3 in daemon process 'cafe'.
+[Tue May 10 15:55:16.123062 2022] [wsgi:debug] [pid 9:tid 140247728723712] src/server/mod_wsgi.c(9115): mod_wsgi (pid=9): Started thread 4 in daemon process 'cafe'.
+[Tue May 10 15:55:18.737603 2022] [authz_core:debug] [pid 10:tid 140247770687232] mod_authz_core.c(817): [client 100.102.187.117:53960] AH01626: authorization result of Require all granted: granted
+[Tue May 10 15:55:18.737682 2022] [authz_core:debug] [pid 10:tid 140247770687232] mod_authz_core.c(817): [client 100.102.187.117:53960] AH01626: authorization result of <RequireAny>: granted
+[Tue May 10 15:55:18.737856 2022] [authz_core:debug] [pid 10:tid 140247770687232] mod_authz_core.c(817): [client 100.102.187.117:53960] AH01626: authorization result of Require all granted: granted
+[Tue May 10 15:55:18.737889 2022] [authz_core:debug] [pid 10:tid 140247770687232] mod_authz_core.c(817): [client 100.102.187.117:53960] AH01626: authorization result of <RequireAny>: granted
+[Tue May 10 15:55:18.738554 2022] [wsgi:info] [pid 9:tid 140247762294528] [remote 100.102.187.117:53960] mod_wsgi (pid=9, process='cafe', application=''): Loading Python script file '/var/www/app/cafe.wsgi'.
+[Tue May 10 15:55:19.434342 2022] [wsgi:error] [pid 9:tid 140247762294528] /usr/local/lib/python3.8/dist-packages/flask_sqlalchemy/__init__.py:872: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+[Tue May 10 15:55:19.434421 2022] [wsgi:error] [pid 9:tid 140247762294528]   warnings.warn(FSADeprecationWarning(
+[Tue May 10 15:55:19.507232 2022] [deflate:debug] [pid 10:tid 140247770687232] mod_deflate.c(854): [client 100.102.187.117:53960] AH01384: Zlib: Compressed 464 to 283 : URL /login
+[Tue May 10 15:55:22.285642 2022] [authz_core:debug] [pid 10:tid 140247762294528] mod_authz_core.c(817): [client 100.102.187.117:53960] AH01626: authorization result of Require all granted: granted, referer: http://z600:8080/login
+[Tue May 10 15:55:22.285728 2022] [authz_core:debug] [pid 10:tid 140247762294528] mod_authz_core.c(817): [client 100.102.187.117:53960] AH01626: authorization result of <RequireAny>: granted, referer: http://z600:8080/login
+[Tue May 10 15:55:22.285825 2022] [authz_core:debug] [pid 10:tid 140247762294528] mod_authz_core.c(817): [client 100.102.187.117:53960] AH01626: authorization result of Require all granted: granted, referer: http://z600:8080/login
+[Tue May 10 15:55:22.285849 2022] [authz_core:debug] [pid 10:tid 140247762294528] mod_authz_core.c(817): [client 100.102.187.117:53960] AH01626: authorization result of <RequireAny>: granted, referer: http://z600:8080/login
+[Tue May 10 15:55:22.315545 2022] [authz_core:debug] [pid 10:tid 140247753901824] mod_authz_core.c(817): [client 100.102.187.117:53960] AH01626: authorization result of Require all granted: granted, referer: http://z600:8080/login
+[Tue May 10 15:55:22.315603 2022] [authz_core:debug] [pid 10:tid 140247753901824] mod_authz_core.c(817): [client 100.102.187.117:53960] AH01626: authorization result of <RequireAny>: granted, referer: http://z600:8080/login
+[Tue May 10 15:55:22.315686 2022] [authz_core:debug] [pid 10:tid 140247753901824] mod_authz_core.c(817): [client 100.102.187.117:53960] AH01626: authorization result of Require all granted: granted, referer: http://z600:8080/login
+[Tue May 10 15:55:22.315710 2022] [authz_core:debug] [pid 10:tid 140247753901824] mod_authz_core.c(817): [client 100.102.187.117:53960] AH01626: authorization result of <RequireAny>: granted, referer: http://z600:8080/login
+[Tue May 10 15:55:22.326684 2022] [deflate:debug] [pid 10:tid 140247753901824] mod_deflate.c(854): [client 100.102.187.117:53960] AH01384: Zlib: Compressed 227 to 169 : URL /, referer: http://z600:8080/login
+[Tue May 10 15:55:22.392530 2022] [authz_core:debug] [pid 10:tid 140247745509120] mod_authz_core.c(817): [client 100.102.187.117:53960] AH01626: authorization result of Require all granted: granted, referer: http://z600:8080/
+[Tue May 10 15:55:22.392564 2022] [authz_core:debug] [pid 10:tid 140247745509120] mod_authz_core.c(817): [client 100.102.187.117:53960] AH01626: authorization result of <RequireAny>: granted, referer: http://z600:8080/
+[Tue May 10 15:55:22.392614 2022] [authz_core:debug] [pid 10:tid 140247745509120] mod_authz_core.c(817): [client 100.102.187.117:53960] AH01626: authorization result of Require all granted: granted, referer: http://z600:8080/
+[Tue May 10 15:55:22.392628 2022] [authz_core:debug] [pid 10:tid 140247745509120] mod_authz_core.c(817): [client 100.102.187.117:53960] AH01626: authorization result of <RequireAny>: granted, referer: http://z600:8080/
+[Tue May 10 15:55:28.973754 2022] [authz_core:debug] [pid 11:tid 140247770687232] mod_authz_core.c(817): [client 100.102.187.117:53961] AH01626: authorization result of Require all granted: granted
+[Tue May 10 15:55:28.973834 2022] [authz_core:debug] [pid 11:tid 140247770687232] mod_authz_core.c(817): [client 100.102.187.117:53961] AH01626: authorization result of <RequireAny>: granted
+[Tue May 10 15:55:28.973986 2022] [authz_core:debug] [pid 11:tid 140247770687232] mod_authz_core.c(817): [client 100.102.187.117:53961] AH01626: authorization result of Require all granted: granted
+[Tue May 10 15:55:28.974019 2022] [authz_core:debug] [pid 11:tid 140247770687232] mod_authz_core.c(817): [client 100.102.187.117:53961] AH01626: authorization result of <RequireAny>: granted
+[Tue May 10 15:55:28.992897 2022] [authz_core:debug] [pid 11:tid 140247753901824] mod_authz_core.c(817): [client 100.102.187.117:53961] AH01626: authorization result of Require all granted: granted
+[Tue May 10 15:55:28.992950 2022] [authz_core:debug] [pid 11:tid 140247753901824] mod_authz_core.c(817): [client 100.102.187.117:53961] AH01626: authorization result of <RequireAny>: granted
+[Tue May 10 15:55:28.993026 2022] [authz_core:debug] [pid 11:tid 140247753901824] mod_authz_core.c(817): [client 100.102.187.117:53961] AH01626: authorization result of Require all granted: granted
+[Tue May 10 15:55:28.993069 2022] [authz_core:debug] [pid 11:tid 140247753901824] mod_authz_core.c(817): [client 100.102.187.117:53961] AH01626: authorization result of <RequireAny>: granted
+[Tue May 10 15:55:28.997011 2022] [deflate:debug] [pid 11:tid 140247753901824] mod_deflate.c(854): [client 100.102.187.117:53961] AH01384: Zlib: Compressed 36 to 38 : URL /
+[Tue May 10 15:55:30.632485 2022] [authz_core:debug] [pid 11:tid 140247762294528] mod_authz_core.c(817): [client 100.102.187.117:53961] AH01626: authorization result of Require all granted: granted, referer: http://z600:8080/
+[Tue May 10 15:55:30.632551 2022] [authz_core:debug] [pid 11:tid 140247762294528] mod_authz_core.c(817): [client 100.102.187.117:53961] AH01626: authorization result of <RequireAny>: granted, referer: http://z600:8080/
+[Tue May 10 15:55:30.632640 2022] [authz_core:debug] [pid 11:tid 140247762294528] mod_authz_core.c(817): [client 100.102.187.117:53961] AH01626: authorization result of Require all granted: granted, referer: http://z600:8080/
+[Tue May 10 15:55:30.632664 2022] [authz_core:debug] [pid 11:tid 140247762294528] mod_authz_core.c(817): [client 100.102.187.117:53961] AH01626: authorization result of <RequireAny>: granted, referer: http://z600:8080/
+[Tue May 10 15:55:30.636516 2022] [deflate:debug] [pid 11:tid 140247762294528] mod_deflate.c(854): [client 100.102.187.117:53961] AH01384: Zlib: Compressed 464 to 285 : URL /login, referer: http://z600:8080/
+[Tue May 10 15:55:37.154106 2022] [authz_core:debug] [pid 11:tid 140247459428096] mod_authz_core.c(817): [client 100.102.187.117:53963] AH01626: authorization result of Require all granted: granted
+[Tue May 10 15:55:37.154178 2022] [authz_core:debug] [pid 11:tid 140247459428096] mod_authz_core.c(817): [client 100.102.187.117:53963] AH01626: authorization result of <RequireAny>: granted
+[Tue May 10 15:55:37.154269 2022] [authz_core:debug] [pid 11:tid 140247459428096] mod_authz_core.c(817): [client 100.102.187.117:53963] AH01626: authorization result of Require all granted: granted
+[Tue May 10 15:55:37.154294 2022] [authz_core:debug] [pid 11:tid 140247459428096] mod_authz_core.c(817): [client 100.102.187.117:53963] AH01626: authorization result of <RequireAny>: granted
+[Tue May 10 15:55:37.162882 2022] [deflate:debug] [pid 11:tid 140247459428096] mod_deflate.c(854): [client 100.102.187.117:53963] AH01384: Zlib: Compressed 469 to 284 : URL /register
+[Tue May 10 15:55:44.835315 2022] [authz_core:debug] [pid 10:tid 140247383926528] mod_authz_core.c(817): [client 100.102.187.117:53964] AH01626: authorization result of Require all granted: granted, referer: http://z600:8080/register
+[Tue May 10 15:55:44.835396 2022] [authz_core:debug] [pid 10:tid 140247383926528] mod_authz_core.c(817): [client 100.102.187.117:53964] AH01626: authorization result of <RequireAny>: granted, referer: http://z600:8080/register
+[Tue May 10 15:55:44.835512 2022] [authz_core:debug] [pid 10:tid 140247383926528] mod_authz_core.c(817): [client 100.102.187.117:53964] AH01626: authorization result of Require all granted: granted, referer: http://z600:8080/register
+[Tue May 10 15:55:44.835540 2022] [authz_core:debug] [pid 10:tid 140247383926528] mod_authz_core.c(817): [client 100.102.187.117:53964] AH01626: authorization result of <RequireAny>: granted, referer: http://z600:8080/register
+[Tue May 10 15:55:44.877551 2022] [wsgi:error] [pid 9:tid 140247762294528] [remote 100.102.187.117:53964] [2022-05-10 15:55:44,873] ERROR in app: Exception on /register [POST]
+[Tue May 10 15:55:44.877620 2022] [wsgi:error] [pid 9:tid 140247762294528] [remote 100.102.187.117:53964] Traceback (most recent call last):
+[Tue May 10 15:55:44.877640 2022] [wsgi:error] [pid 9:tid 140247762294528] [remote 100.102.187.117:53964]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 2077, in wsgi_app
+[Tue May 10 15:55:44.877656 2022] [wsgi:error] [pid 9:tid 140247762294528] [remote 100.102.187.117:53964]     response = self.full_dispatch_request()
+[Tue May 10 15:55:44.877670 2022] [wsgi:error] [pid 9:tid 140247762294528] [remote 100.102.187.117:53964]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1525, in full_dispatch_request
+[Tue May 10 15:55:44.877685 2022] [wsgi:error] [pid 9:tid 140247762294528] [remote 100.102.187.117:53964]     rv = self.handle_user_exception(e)
+[Tue May 10 15:55:44.877700 2022] [wsgi:error] [pid 9:tid 140247762294528] [remote 100.102.187.117:53964]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1523, in full_dispatch_request
+[Tue May 10 15:55:44.877716 2022] [wsgi:error] [pid 9:tid 140247762294528] [remote 100.102.187.117:53964]     rv = self.dispatch_request()
+[Tue May 10 15:55:44.877731 2022] [wsgi:error] [pid 9:tid 140247762294528] [remote 100.102.187.117:53964]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1509, in dispatch_request
+[Tue May 10 15:55:44.877746 2022] [wsgi:error] [pid 9:tid 140247762294528] [remote 100.102.187.117:53964]     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+[Tue May 10 15:55:44.877762 2022] [wsgi:error] [pid 9:tid 140247762294528] [remote 100.102.187.117:53964]   File "/var/www/app/cafe/view.py", line 25, in register
+[Tue May 10 15:55:44.877777 2022] [wsgi:error] [pid 9:tid 140247762294528] [remote 100.102.187.117:53964]     return flask.render_template(flask.url_for('/'))
+[Tue May 10 15:55:44.877794 2022] [wsgi:error] [pid 9:tid 140247762294528] [remote 100.102.187.117:53964]   File "/usr/local/lib/python3.8/dist-packages/flask/helpers.py", line 336, in url_for
+[Tue May 10 15:55:44.877811 2022] [wsgi:error] [pid 9:tid 140247762294528] [remote 100.102.187.117:53964]     return appctx.app.handle_url_build_error(error, endpoint, values)
+[Tue May 10 15:55:44.877826 2022] [wsgi:error] [pid 9:tid 140247762294528] [remote 100.102.187.117:53964]   File "/usr/local/lib/python3.8/dist-packages/flask/helpers.py", line 323, in url_for
+[Tue May 10 15:55:44.877841 2022] [wsgi:error] [pid 9:tid 140247762294528] [remote 100.102.187.117:53964]     rv = url_adapter.build(
+[Tue May 10 15:55:44.877860 2022] [wsgi:error] [pid 9:tid 140247762294528] [remote 100.102.187.117:53964]   File "/usr/local/lib/python3.8/dist-packages/werkzeug/routing.py", line 2307, in build
+[Tue May 10 15:55:44.877875 2022] [wsgi:error] [pid 9:tid 140247762294528] [remote 100.102.187.117:53964]     raise BuildError(endpoint, values, method, self)
+[Tue May 10 15:55:44.877890 2022] [wsgi:error] [pid 9:tid 140247762294528] [remote 100.102.187.117:53964] werkzeug.routing.BuildError: Could not build url for endpoint '/'. Did you mean 'register' instead?
+[Tue May 10 15:56:56.617105 2022] [wsgi:info] [pid 9:tid 140300140571712] mod_wsgi (pid=9): Attach interpreter ''.
+[Tue May 10 15:56:56.627894 2022] [wsgi:debug] [pid 9:tid 140300103866112] src/server/mod_wsgi.c(9115): mod_wsgi (pid=9): Started thread 1 in daemon process 'cafe'.
+[Tue May 10 15:56:56.627930 2022] [wsgi:debug] [pid 9:tid 140300095473408] src/server/mod_wsgi.c(9115): mod_wsgi (pid=9): Started thread 2 in daemon process 'cafe'.
+[Tue May 10 15:56:56.627924 2022] [wsgi:debug] [pid 9:tid 140300112258816] src/server/mod_wsgi.c(9115): mod_wsgi (pid=9): Started thread 0 in daemon process 'cafe'.
+[Tue May 10 15:56:56.628077 2022] [wsgi:debug] [pid 9:tid 140300087080704] src/server/mod_wsgi.c(9115): mod_wsgi (pid=9): Started thread 3 in daemon process 'cafe'.
+[Tue May 10 15:56:56.628163 2022] [wsgi:debug] [pid 9:tid 140300078688000] src/server/mod_wsgi.c(9115): mod_wsgi (pid=9): Started thread 4 in daemon process 'cafe'.
