@@ -1,5 +1,4 @@
 import flask_login
-import wtforms
 
 from cafe.database import db
 

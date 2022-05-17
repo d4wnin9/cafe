@@ -1,5 +1,4 @@
 from flask import Flask
-import flask_login
 
 from cafe import view
 

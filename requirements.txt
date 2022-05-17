@@ -4,3 +4,5 @@ Jinja2
 Flask-Login
 Flask-SQLAlchemy
 psycopg2-binary
+Flask-WTF
+Werkzeug
