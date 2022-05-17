@@ -1,12 +1,12 @@
 from flask import Flask
-import flask_login
+from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf.csrf import CSRFProtect
 
 from cafe import config
 from cafe import route
 
-# https://outputable.com/post/flask-login/
+
 app = Flask(
     __name__,
     template_folder=config.TEMPLATE_FOLDER,
@@ -19,7 +19,7 @@ app.config['SECRET_KEY'] = config.SECRET_KEY
 route.add_route(app)
 csrf = CSRFProtect(app)
 
-login_manager = flask_login.LoginManager()
+login_manager = LoginManager()
 login_manager.init_app(app)
 
 @login_manager.user_loader
