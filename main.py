@@ -12,10 +12,8 @@ app = Flask(
     template_folder=config.TEMPLATE_FOLDER,
     static_folder=config.STATIC_FOLDER,
 )
-# user: team8
-# pass: 1qazxsw2
-# data: team8db
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/team8db?user=team8&password=1qazxsw2'
+
+app.config['SQLALCHEMY_DATABASE_URI'] = config.DATABASE_URI
 app.config['SECRET_KEY'] = config.SECRET_KEY
 
 route.add_route(app)

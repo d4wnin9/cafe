@@ -5,17 +5,21 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from database import db
 from user import LoginUser
 
-# passwords are stored in plain text
 
 def index():
+    # authed
     if current_user.is_authenticated:
         return render_template("index.html")
+    
+    # unauthed
     return 'Login -> <a href="/login">/login</a>'
 
 def register():
+    # GET
     if request.method == 'GET':
         return render_template('register.html')
 
+    # POST
     username = request.form.get('username')
     try:
         user = LoginUser.query.filter(LoginUser.username == username).one_or_none()
@@ -33,8 +37,11 @@ def register():
         return render_template('register.html', error=e)
 
 def login():
+    # GET
     if request.method == 'GET':
         return render_template('login.html')
+
+    # POST
     username = request.form.get('username')
     try:
         user = LoginUser.query.filter(LoginUser.username == username).one_or_none()
