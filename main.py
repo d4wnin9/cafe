@@ -3,8 +3,8 @@ from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf.csrf import CSRFProtect
 
-from cafe import config
-from cafe import route
+import config
+import route
 
 
 app = Flask(
@@ -12,8 +12,10 @@ app = Flask(
     template_folder=config.TEMPLATE_FOLDER,
     static_folder=config.STATIC_FOLDER,
 )
-
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://cafe:cafe@database/cafe'
+# user: team8
+# pass: 1qazxsw2
+# data: team8db
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/team8db?user=team8&password=1qazxsw2'
 app.config['SECRET_KEY'] = config.SECRET_KEY
 
 route.add_route(app)
@@ -24,10 +26,10 @@ login_manager.init_app(app)
 
 @login_manager.user_loader
 def load_user(user_id):
-    from cafe.user import LoginUser
+    from user import LoginUser
     return LoginUser.query.filter(LoginUser.id == user_id).one_or_none()
 
-from cafe.database import db
+from database import db
 db.init_app(app)
 with app.app_context():
     db.create_all()

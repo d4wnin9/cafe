@@ -7,7 +7,7 @@ SECRET_KEY = os.urandom(24)
 HOST = '0.0.0.0'
 
 # Port
-PORT = 80
+PORT = 8080
 
 # Debug mode
 DEBUG_MODE = True

@@ -1,13 +1,12 @@
 from flask import Flask
 
-from cafe import view
+import view
 
 
 def add_route(app: Flask):
     # index
     app.add_url_rule('/', 'index', view.index)
     
-
     # login
     app.add_url_rule('/login', 'login', view.login, methods=['GET','POST'])
 
