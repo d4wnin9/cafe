@@ -1,0 +1,94 @@
+[
+  {
+    "day":6/27
+    "Aセット": {
+        "name": "焼き餃子の豆板醤ソースがけ",
+        "price": 380,
+        "nutrition": {
+            "energy": 706,
+            "protein": 16.8,
+            "fat": 21.3,
+            "salt": 3.8
+        }
+    }
+    "Bセット": {
+        "name": "豚肉の味噌炒め丼",
+        "price": 320,
+        "nutrition": {
+            "energy": 675,
+            "protein": 24.0,
+            "fat": 17.6,
+            "salt": 4.9
+        }
+    }
+  },
+  {
+    "day":6/28
+    "Aセット": {
+        "name": "和風おろしハンバーグ",
+        "price": 380,
+        "nutrition": {
+            "energy": 697,
+            "protein": 24.8,
+            "fat": 17.7,
+            "salt": 6.4
+        }
+    }
+    "Bセット": {
+        "name": "中華丼",
+        "price": 320,
+        "nutrition": {
+            "energy": 599,
+            "protein": 19.8,
+            "fat": 12.3,
+            "salt": 4.8
+        }
+    }
+  },
+  {
+    "day":6/29
+    "Aセット": {
+        "name": "牛肉の南蛮焼き",
+        "price": 380,
+        "nutrition": {
+            "energy": 721,
+            "protein": 20.1,
+            "fat": 29.3,
+            "salt": 4.1
+        }
+    }
+    "Bセット": {
+        "name": "チキン味噌カツ丼",
+        "price": 320,
+        "nutrition": {
+            "energy": 764,
+            "protein": 10.2,
+            "fat": 22.0,
+            "salt": 3.8
+        }
+    }
+  },
+  {
+    "day":6/30
+    "Aセット": {
+        "name": "白身魚の一口竜田揚げと串カツ",
+        "price": 380,
+        "nutrition": {
+            "energy": 590,
+            "protein": 20.6,
+            "fat": 9.4,
+            "salt": 2.8
+        }
+    }
+    "Bセット": {
+        "name": "照り焼きチキン丼",
+        "price": 320,
+        "nutrition": {
+            "energy": 660,
+            "protein": 23.3,
+            "fat": 17.6,
+            "salt": 2.8
+        }
+    }
+  }
+]
