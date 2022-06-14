@@ -63,4 +63,11 @@ def logout():
 
 @login_required
 def history():
-    return current_user.username
+    username = current_user.username
+    user = LoginUser.query.filter(LoginUser.username == username).one_or_none()
+
+    # Test
+    user.expense = 10101010
+    user.calorie = 5000
+
+    return render_template('history.html', user=user)
