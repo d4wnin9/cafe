@@ -15,3 +15,6 @@ def add_route(app: Flask):
     
     # logout
     app.add_url_rule('/logout', 'logout', view.logout)
+
+    # history
+    app.add_url_rule('/history', 'history', view.history)

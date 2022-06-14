@@ -24,7 +24,7 @@ login_manager.init_app(app)
 
 @login_manager.user_loader
 def load_user(user_id):
-    from user import LoginUser
+    from model import LoginUser
     return LoginUser.query.filter(LoginUser.id == user_id).one_or_none()
 
 from database import db

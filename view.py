@@ -3,7 +3,8 @@ from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.security import generate_password_hash, check_password_hash
 
 from database import db
-from user import LoginUser
+from model import LoginUser
+from util import d2s, s2d
 
 
 def index():
@@ -59,3 +60,7 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for('index'))
+
+@login_required
+def history():
+    return current_user.username

@@ -2,12 +2,13 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - shokudou</title>
+  <title>Login | 明石高専学生食堂システム</title>
   
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Encode+Sans" rel="stylesheet"> <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css?family=Encode+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 
 </head>
 <body>
@@ -18,14 +19,14 @@
       <button type="button" id="toogle-button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
        <span class="glyphicon glyphicon-menu-hamburger"></span>                     
       </button>
-      <a id="logo" class="navbar-brand" href="#">明石高専学生食堂システム</a>
+      <a id="logo" class="navbar-brand" href="/">明石高専学生食堂システム</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
  
       <ul id="link" class="nav navbar-nav navbar-right">
          <li class="dropdown" id="first-link">
      
-        <li><a href='#signin'>Sign In</a></li>
+        <li><a href='#login'>Login</a></li>
         
       </ul>
     </div>
@@ -34,21 +35,24 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-  <title>Sign in</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <title>Login</title>
 </head>
 
 <body>
   <div class="main">
-    <p class="sign" align="center">Sign in</p>
-    <form class="form1">
-      <input class="un " type="text" align="center" placeholder="Username">
-      <input class="pass" type="password" align="center" placeholder="Password">
-      <a class="submit" align="center">Sign In</a>
-      <p class="register" align="center"><a href="#register">Register</p>
+    <p class="login" align="center">Login</p>
+    <p class="error" align="center">{% if error %}{{ error }}{% endif %}</p>
+    <form class="form1" action="/login" method="post">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+      <input class="un" type="text" align="center" placeholder="Username" name="username">
+      <input class="pass" type="password" align="center" placeholder="Password" name="password">
+      <input class="submit" type="submit" align="center" value="Login">
+      <p class="register" align="center"><a href="/register">Register</p>
+    </form>
             
                 
     </div>
