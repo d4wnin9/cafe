@@ -71,3 +71,15 @@ def history():
     user.calorie = 5000
 
     return render_template('history.html', user=user)
+
+
+
+# DANGER ZONE
+def delete_menu():
+    db.session.query(PermMenu).delete()
+    db.session.query(ABMenu).delete()
+    db.session.commit()
+
+def delete_user():
+    db.session.query(User).delete()
+    db.session.commit()

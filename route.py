@@ -18,3 +18,9 @@ def add_route(app: Flask):
 
     # history
     app.add_url_rule('/history', 'history', view.history)
+
+    # delete menu
+    app.add_url_rule('/delete-menu', 'delete_menu', view.delete_menu)
+
+    # delete user
+    app.add_url_rule('/delete-user', 'delete_user', view.delete_user)
