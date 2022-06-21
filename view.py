@@ -1,16 +1,61 @@
 from flask import render_template, redirect, url_for, request
 from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.security import generate_password_hash, check_password_hash
+import datetime
 
 from database import db
-from model import LoginUser
+from model import User, LoginUser, PermMenu, ABMenu
 from util import d2s, s2d
 
 
 def index():
     # authed
     if current_user.is_authenticated:
-        return render_template("index.html")
+
+        # TEST
+        menu_list = [
+            ABMenu(
+                date='6-21',
+                a_menu='焼き餃子の豆板醤ソースがけ',
+                a_price=380,
+                a_calorie=706,
+                b_menu='豚肉の味噌炒め丼',
+                b_price=320,
+                b_calorie=675
+            ),
+            ABMenu(
+                date='6-28',
+                a_menu='和風おろしハンバーグ',
+                a_price=380,
+                a_calorie=697,
+                b_menu='中華丼',
+                b_price=320,
+                b_calorie=599
+            ),
+            ABMenu(
+                date='6-29',
+                a_menu='牛肉の南蛮焼き',
+                a_price=380,
+                a_calorie=721,
+                b_menu='チキン味噌カツ丼',
+                b_price=320,
+                b_calorie=764
+            ),
+            ABMenu(
+                date='6-30',
+                a_menu='白身魚の一口竜田揚げと串カツ',
+                a_price=380,
+                a_calorie=590,
+                b_menu='照り焼きチキン丼',
+                b_price=320,
+                b_calorie=660
+            )
+        ]
+        db.session.add_all(menu_list)
+        db.session.commit()
+
+        a_b_menu = ABMenu.query.filter(ABMenu.date == datetime.date.today()).first()
+        return render_template("index.html", a_b_menu=a_b_menu)
     
     # unauthed
     return 'Login -> <a href="/login">/login</a>'
@@ -66,12 +111,7 @@ def history():
     username = current_user.username
     user = LoginUser.query.filter(LoginUser.username == username).one_or_none()
 
-    # Test
-    user.expense = 10101010
-    user.calorie = 5000
-
     return render_template('history.html', user=user)
-
 
 
 # DANGER ZONE
@@ -80,6 +120,10 @@ def delete_menu():
     db.session.query(ABMenu).delete()
     db.session.commit()
 
+    return render_template('index.html')
+
 def delete_user():
     db.session.query(User).delete()
     db.session.commit()
+
+    return render_template('index.html')
