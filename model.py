@@ -30,9 +30,9 @@ class ABMenu(db.Model):
     __tablename__ = 'a_b_menu'
 
     date = db.Column('date', db.String(8), nullable=False)
-    a_menu = db.Column('menu', db.String(32), nullable=False)
-    a_price = db.Column('price', db.Integer, nullable=False)
-    a_calorie = db.Column('calorie', db.Integer, nullable=False)
-    b_menu = db.Column('menu', db.String(32), nullable=False)
-    b_price = db.Column('price', db.Integer, nullable=False)
-    b_calorie = db.Column('calorie', db.Integer, nullable=False)
+    a_menu = db.Column('a_menu', db.String(32), nullable=False)
+    a_price = db.Column('a_price', db.Integer, nullable=False)
+    a_calorie = db.Column('a_calorie', db.Integer, nullable=False)
+    b_menu = db.Column('b_menu', db.String(32), nullable=False)
+    b_price = db.Column('b_price', db.Integer, nullable=False)
+    b_calorie = db.Column('b_calorie', db.Integer, nullable=False)
