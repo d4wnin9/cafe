@@ -26,6 +26,7 @@ class PermMenu(db.Model):
     menu = db.Column('menu', db.String(32), nullable=False)
     price = db.Column('price', db.Integer, nullable=False)
     calorie = db.Column('calorie', db.Integer, nullable=False)
+    out_of_stock = db.Column(db.Boolean, nullable=False, default=False)
 
     def __init__(self, menu, price, calorie):
         self.menu = menu
@@ -37,13 +38,15 @@ class ABMenu(db.Model):
     __tablename__ = 'a_b_menu'
 
     id = db.Column('id', db.Integer, primary_key=True)
-    date = db.Column('date', db.DateTime, nullable=False)
+    date = db.Column('date', db.Date, nullable=False)
     a_menu = db.Column('a_menu', db.String(32), nullable=False)
     a_price = db.Column('a_price', db.Integer, nullable=False)
     a_calorie = db.Column('a_calorie', db.Integer, nullable=False)
+    a_out_of_stock = db.Column(db.Boolean, nullable=False, default=False)
     b_menu = db.Column('b_menu', db.String(32), nullable=False)
     b_price = db.Column('b_price', db.Integer, nullable=False)
     b_calorie = db.Column('b_calorie', db.Integer, nullable=False)
+    b_out_of_stock = db.Column(db.Boolean, nullable=False, default=False)
 
     def __init__(self, date, a_menu, a_price, a_calorie, b_menu, b_price, b_calorie):
         self.date = datetime.date(2022, *map(int, date.split('-')))
@@ -53,3 +56,4 @@ class ABMenu(db.Model):
         self.b_menu = b_menu
         self.b_price = b_price
         self.b_calorie = b_calorie
+
