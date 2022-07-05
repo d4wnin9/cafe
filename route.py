@@ -20,8 +20,8 @@ def add_route(app: Flask):
     app.add_url_rule('/history', 'history', view.history)
 
 
-    # add menu
-    app.add_url_rule('/add-menu', 'add_menu', view.add_menu)
+    # set menu
+    app.add_url_rule('/set-menu', 'set_menu', view.set_menu)
 
     # delete menu
     app.add_url_rule('/delete-menu', 'delete_menu', view.delete_menu)

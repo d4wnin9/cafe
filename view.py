@@ -129,6 +129,52 @@ def add_menu():
 
     return redirect(url_for('index'))
 
+def set_menu():
+    db.session.query(PermMenu).delete()
+    db.session.query(ABMenu).delete()
+    db.session.commit()
+
+    import json
+    files = ['AB_6_27_30.json']
+    a_b_menu_list = []
+    perm_menu_list = []
+    for file in files:
+        with open(file, 'r') as f:
+            menus = json.load(f)
+        for menu in menus:
+            date = list(menu.keys())[0]
+            a_menu = menu[date]['Aセット']['name']
+            a_price = menu[date]['Aセット']['price']
+            a_calorie = menu[date]['Aセット']['calorie']
+            b_menu = menu[date]['Bセット']['name']
+            b_price = menu[date]['Bセット']['price']
+            b_calorie = menu[date]['Bセット']['calorie']
+            a_b_menu = ABMenu(
+                date=date,
+                a_menu=a_menu,
+                a_price=a_price,
+                a_calorie=a_calorie,
+                b_menu=b_menu,
+                b_price=b_price,
+                b_calorie=b_calorie
+            )
+            a_b_menu_list.append(a_b_menu)
+    db.session.add_all(a_b_menu_list)
+    with open('permanent.json', 'r') as f:
+        menus = json.load(f)
+    for menu in menus:
+        perm_menu = PermMenu(
+            menu=menu['name'],
+            price=menu['price'],
+            calorie = menu['calorie']
+        )
+        perm_menu_list.append(perm_menu)
+    db.session.add_all(perm_menu_list)
+    db.session.commit()
+
+    return redirect(url_for('index'))
+
+
 def delete_menu():
     db.session.query(PermMenu).delete()
     db.session.query(ABMenu).delete()
