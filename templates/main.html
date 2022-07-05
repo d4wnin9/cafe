@@ -209,7 +209,7 @@
 
 <div class="popup" id="popup-1">
    <div class="content">
-    <div class="close-btn" onclick="togglePop()">
+    <div class="close-btn" onclick="togglePop(menu)">
      x</div>
     <h3>
       CHECK LIST
@@ -286,10 +286,10 @@ let menu = "";
  
   }, false);
 }
-    function myEat() {
+    function myEat(menu, stock) {
       const request  = new XMLHttpRequest();
-      request.open('POST','/MenuClick/${JSON.stringtify(menu)}');
-      request.send();
+      request.open('POST','/');
+      request.send(menu=menu&out_of_stock=out_of_stock);
     }
     function togglePop(){
       document.getElementById("popup-1")
