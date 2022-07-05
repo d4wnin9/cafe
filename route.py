@@ -28,3 +28,6 @@ def add_route(app: Flask):
 
     # delete user
     app.add_url_rule('/delete-user', 'delete_user', view.delete_user)
+
+    # test user
+    app.add_url_rule('/test-user', 'test_user', view.test_user)

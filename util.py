@@ -2,9 +2,9 @@ import pickle
 import bz2
 
 
-def d2s(obj):
-    return bz2.compress(pickle.dumps(obj))
+def o2s(obj):
+    return bz2.compress(pickle.dumps(obj)).hex()
 
-def s2d(s):
-    return pickle.loads(bz2.decompress(s))
+def s2o(s):
+    return pickle.loads(bz2.decompress(bytes.fromhex(s)))
 

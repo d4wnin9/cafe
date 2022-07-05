@@ -2,13 +2,13 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>History | 明石高専学生食堂システム</title>
-  
+  <title>購入履歴 | 明石高専学生食堂システム</title>
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Encode+Sans" rel="stylesheet"> <link rel="stylesheet" href="./history.css">
-
+  <link href="https://fonts.googleapis.com/css?family=Encode+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/history.css') }}">
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -42,26 +42,27 @@
     こんにちは、{{user.username}}さん
   </h4>
   <h4>
-    あなたの出費は{{user.expense}}円、総合カロリー{{user.calorie}}kcal
+    あなたの出費は{{user.expense}}円、総カロリー{{user.calorie}}kcal
   </h4>
 </div>
 <div class = "user-menu">
-  <div class = "menu-date">
-    {{user.date_menu}}
-  </div>
-   <div class="menu-group">
-          <div class="menu-item">
-            <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt="Bruschetta">
-              <div class="menu-item-text">
-                <h3 class="menu-item-heading">
-                <span class="menu-item-name">Bruschetta</span>
-              <span class="menu-item-price">$12.90</span>
-            </h3>
-            <p class="menu-item-description">
-              〇〇 kcal
-            </p>
-          </div>
+  <div class="menu-group">
+    {% for line in date_menu_price_calorie %}
+      <div class="menu-item">
+        <!--
+        <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt="Bruschetta">
+        -->
+        <div class="menu-item-text">
+          <h3 class="menu-item-heading">
+            <span class="menu-item-name">{{ line[1] }}</span>
+            <span class="menu-item-price">{{ line[2] }}円</span>
+          </h3>
+          <p class="menu-item-description">
+            {{ line[3] }} kcal
+          </p>
         </div>
+      </div>
+    {% endfor %}
   </div>
 </div>
 </body>

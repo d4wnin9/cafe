@@ -5,7 +5,7 @@ import datetime
 
 from database import db
 from model import User, LoginUser, PermMenu, ABMenu
-from util import d2s, s2d
+from util import o2s, s2o
 
 
 def index():
@@ -67,8 +67,8 @@ def logout():
 def history():
     username = current_user.username
     user = LoginUser.query.filter(LoginUser.username == username).one_or_none()
-
-    return render_template('history.html', user=user)
+    date_menu_price_calorie = s2o(user.date_menu_price_calorie)
+    return render_template('history.html', user=user, date_menu_price_calorie=date_menu_price_calorie)
 
 
 # DANGER ZONE
@@ -141,3 +141,30 @@ def delete_user():
     db.session.commit()
 
     return redirect(url_for('index'))
+
+def test_user():
+    user = LoginUser.query.filter(LoginUser.username == 'ponyo').one_or_none()
+    if user is None:
+        user = LoginUser()
+        user.username = 'ponyo'
+        user.password = generate_password_hash('sosuke')
+    db.session.add(user)
+    db.session.commit()
+    if user.date_menu_price_calorie == "":
+        date_menu_price_calorie = []
+    else:
+        print(type(user.date_menu_price_calorie))
+        date_menu_price_calorie = s2o(user.date_menu_price_calorie)
+    date_menu_price_calorie.append(["2022/07/01", "カレー", 700, 1000])
+    date_menu_price_calorie.append(["2022/07/02", "卵かけご飯", 400, 300])
+    date_menu_price_calorie.append(["2022/07/03", "唐揚げ定食", 700, 1200])
+    date_menu_price_calorie.append(["2022/07/04", "チョコレート", 200, 500])
+    date_menu_price_calorie = o2s(date_menu_price_calorie)
+    user.date_menu_price_calorie = date_menu_price_calorie
+    user.calorie = 2000
+    user.expense = 2000
+
+    db.session.add(user)
+    db.session.commit()
+
+    return redirect(url_for('login'))
