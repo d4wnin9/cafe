@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - shokudou</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Encode+Sans" rel="stylesheet"> <link rel="stylesheet" href="./main.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<nav id="scanfcode" class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" id="toogle-button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+       <span class="glyphicon glyphicon-menu-hamburger"></span>                     
+      </button>
+      <a id="logo" class="navbar-brand" href="#">明石高専学生食堂システム</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+ 
+      <ul id="link" class="nav navbar-nav navbar-right">
+         <li class="dropdown" id="first-link">
+        <li><a href='/login'>Login</a></li>
+        <li><a href='/history'>History</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+</body>
+
+<div class="container">
+    <div class="menu">
+      <h4 class="menu-group-heading">
+        日変わりメニュー
+      </h4>
+      <div class="menu-group">
+        <div class="menu-item" onclick="togglePop()" >
+          <img class="menu-item-image" src="https://dummyimage.com/600x400/000/fff" alt="Bruschetta">
+          <div class="menu-item-text">
+            <span class="menu-item-class">Aセット</span>
+            <span class="menu-item-available">{{aset.availability}}</span>
+            <h4 class="menu-item-heading">
+              <span class="menu-item-name">{{aset.name}}</span>
+              
+              <span class="menu-item-price">¥{{aset.price}}</span>
+            </h4>
+            <p class="menu-item-description">
+             {{aset.calories}} kcal
+            </p>
+          </div>
+        </div>
+        <div class="menu-item" onclick="togglePop()">
+          <img class="menu-item-image" src="https://dummyimage.com/600x400/0f0/fff" alt="{aset.name}">
+          <div class="menu-item-text">
+              <span class="menu-item-class">Bセット</span><span class="menu-item-available">{{bset.availability}}</span>
+            <h4 class="menu-item-heading">
+              <span class="menu-item-name">{{bset.name}}</span>
+              <span class="menu-item-price">¥{{bset.price}}</span>
+            </h4>
+            <p class="menu-item-description">
+              {{bset.calories}} kcal
+            </p>
+          </div>
+        </div>
+      </div>
+      <h4 class="menu-group-heading">
+        常設メニュー
+      </h4>
+        <div class="menu-group">
+          <div class="menu-item" onclick="togglePop()">
+            <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt="Bruschetta">
+              <div class="menu-item-text">
+                <h4 class="menu-item-heading">
+                <span class="menu-item-name">Bruschetta</span>
+              <span class="menu-item-price">¥12.90</span>
+            </h4>
+            <p class="menu-item-description">
+              〇〇 kcal
+            </p>
+          </div>
+        </div>
+        <div class="menu-item" onclick="togglePop()">
+          <img class="menu-item-image" src="https://dummyimage.com/600x400/00f/000" alt="Bruschetta">
+          <div class="menu-item-text">
+            <h4 class="menu-item-heading">
+              <span class="menu-item-name">Bruschetta</span>
+              <span class="menu-item-price">¥12.90</span>
+            </h4>
+            <p class="menu-item-description">
+              〇〇 kcal
+            </p>
+          </div>
+        </div>
+          <div class="menu-item" onclick="togglePop()">
+          <img class="menu-item-image" src="https://dummyimage.com/600x400/00f/000" alt="Bruschetta">
+          <div class="menu-item-text">
+            <h4 class="menu-item-heading">
+              <span class="menu-item-name">Bruschetta</span>
+              <span class="menu-item-price">¥12.90</span>
+            </h4>
+            <p class="menu-item-description">
+              〇〇 kcal
+            </p>
+          </div>
+        </div>
+          <div class="menu-item" onclick="togglePop()">
+          <img class="menu-item-image" src="https://dummyimage.com/600x400/00f/000" alt="Bruschetta">
+          <div class="menu-item-text">
+            <h4 class="menu-item-heading">
+              <span class="menu-item-name">Bruschetta</span>
+              <span class="menu-item-price">¥12.90</span>
+            </h4>
+            <p class="menu-item-description">
+              〇〇 kcal
+            </p>
+          </div>
+        </div>
+          <div class="menu-item" onclick="togglePop()">
+          <img class="menu-item-image" src="https://dummyimage.com/600x400/00f/000" alt="Bruschetta">
+          <div class="menu-item-text">
+            <h4 class="menu-item-heading">
+              <span class="menu-item-name">Bruschetta</span>
+              <span class="menu-item-price">¥12.90</span>
+            </h4>
+            <p class="menu-item-description">
+              〇〇 kcal
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="popup" id="popup-1">
+   <div class="content">
+    <div class="close-btn" onclick="togglePop()">
+     x</div>
+    <h3>
+      CHECK LIST
+     </h3> 
+     <p>
+       このメニューを食べました！
+     </p>
+     <input type="checkbox" id="check1" name="eatmenu" value="ate">
+     <p></p>
+      <p>
+       このメニューが売り切れました！
+      </p>
+     <input type="checkbox" id="check2" name="runout" value="runout">
+     <p></p>
+     <button onclick="myEat()" id="send-butt">送信</button>
+     
+    </div>
+  </div>
+</body>
+</html>
+<script>
+  let targets = document.getElementsByClassName("menu-item");
+let menu = "";
+ for(let i = 0; i < targets.length; i++){
+  targets[i].addEventListener("click",() => {
+    if(i==0){
+      menu = "Aセット";
+      
+    }
+    if(i==1){
+      menu = "Bセット";
+      
+    }
+  }, false);
+}
+    function myEat() {
+      if(check1.checked){
+        alert(menu+"ーを食べました");
+      }
+      if(check2.checked){
+        alert(menu+"が売り切れました");
+      }
+      
+ 
+    }
+    function togglePop(){
+      document.getElementById("popup-1")
+      .classList.toggle("active");
+     
+      
+    }
+</script>
+<!-- partial -->
+  
+</body>
+</html>
