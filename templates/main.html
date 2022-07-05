@@ -53,6 +53,10 @@
             <p class="menu-item-description">
              {{ABMenu.calorie}} kcal
             </p>
+            <form action="/" method="post">
+            <input class="submit" type="submit" value="食べた" name="a_ate">
+            <input class="submit" type="submit" value="売り切れ" name="a_out">
+            </form>
           </div>
         </div>
         <div class="menu-item" onclick="togglePop()">
@@ -66,6 +70,10 @@
             <p class="menu-item-description">
               {{ABMenu.b_calories}} kcal
             </p>
+            <form action="/" method="post">
+            <input class="submit" type="submit" value="食べた" name="b_ate">
+            <input class="submit" type="submit" value="売り切れ" name="b_out">
+            </form>
           </div>
         </div>
       </div>
