@@ -243,7 +243,7 @@ let menu = "";
       menu = "Bセット";
       
     }
-     if(i==2){
+    if(i==2){
       menu = {{PermMenu.menu[0]}};
       
     }
@@ -251,41 +251,45 @@ let menu = "";
       menu = {{PermMenu.menu[1]}};
       
     }
-     if(i==4){
+    if(i==4){
       menu = {{PermMenu.menu[2]}};
       
     }
-    if(i==1){
-      menu = "Bセット";
+    if(i==5){
+      menu = {{PermMenu.menu[3]}};
       
     }
-     if(i==0){
-      menu = "Aセット";
+    if(i==6){
+      menu = {{PermMenu.menu[4]}};
       
     }
-    if(i==1){
-      menu = "Bセット";
+    if(i==7){
+      menu = {{PermMenu.menu[5]}};
       
     }
-     if(i==0){
-      menu = "Aセット";
+     if(i==8){
+      menu = {{PermMenu.menu[6]}};
       
     }
-    if(i==1){
-      menu = "Bセット";
+    if(i==9){
+      menu = {{PermMenu.menu[7]}};
       
     }
+    if(i==10){
+      menu = {{PermMenu.menu[8]}};
+      
+    }
+    if(i==11){
+      menu = {{PermMenu.menu[9]}};
+      
+    }
+ 
   }, false);
 }
     function myEat() {
-      if(check1.checked){
-        alert(menu+"ーを食べました");
-      }
-      if(check2.checked){
-        alert(menu+"が売り切れました");
-      }
-      
- 
+      const request  = new XMLHttpRequest();
+      request.open('POST','/MenuClick/${JSON.stringtify(menu)}');
+      request.send();
     }
     function togglePop(){
       document.getElementById("popup-1")
