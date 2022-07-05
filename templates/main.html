@@ -40,15 +40,17 @@
         日変わりメニュー
       </h4>
       <div class="menu-group">
-        <div class="menu-item" onclick="togglePop()" >
-          <img class="menu-item-image" src="https://dummyimage.com/600x400/000/fff" alt="Bruschetta">
+        <div class="menu-item">
+          <img class="menu-item-image" src="https://dummyimage.com/600x400/000/fff">
           <div class="menu-item-text">
             <span class="menu-item-class">Aセット</span>
-            <span class="menu-item-available">{{ABMenu.a_out_of_stock}</span>
+            {% if a_b_menu.a_out_of_stock == 'True' %}
+            <span class="menu-item-available">売り切れ</span>
+            {% endif %}
             <h4 class="menu-item-heading">
-              <span class="menu-item-name">{{ABMenu.a_menu}}</span>
+              <span class="menu-item-name">{{a_b_menu.a_menu}}</span>
               
-              <span class="menu-item-price">¥{{ABMenu.a_price}}</span>
+              <span class="menu-item-price">¥{{a_b_menu.a_price}}</span>
             </h4>
             <p class="menu-item-description">
              {{ABMenu.calorie}} kcal
@@ -60,12 +62,15 @@
           </div>
         </div>
         <div class="menu-item" onclick="togglePop()">
-          <img class="menu-item-image" src="https://dummyimage.com/600x400/0f0/fff" alt="{{ABMenu.b_menu}}">
+          <img class="menu-item-image" src="https://dummyimage.com/600x400/0f0/fff">
           <div class="menu-item-text">
-              <span class="menu-item-class">Bセット</span><span class="menu-item-available">{{ABMenu.b_out_of_stock}}</span>
+             <span class="menu-item-class">Bセット</span>
+             {% if a_b_menu.b_out_of_stock == 'True' %}
+                <span class="menu-item-available">売り切れ</span>
+             {% endif %}
             <h4 class="menu-item-heading">
-              <span class="menu-item-name">{{ABMenu.b_menu}}</span>
-              <span class="menu-item-price">¥{{ABMenu.b_price}}</span>
+              <span class="menu-item-name">{{a_b_menu.b_menu}}</span>
+              <span class="menu-item-price">¥{{a_b_menu.b_price}}</span>
             </h4>
             <p class="menu-item-description">
               {{ABMenu.b_calories}} kcal
