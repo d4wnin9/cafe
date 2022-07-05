@@ -1,20 +1,64 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <title>Register | 明石高専学生食堂システム</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Encode+Sans" rel="stylesheet"> <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+
 </head>
 <body>
-  <p>{% if error %}{{ error }}{% endif %}</p>
-  <form action="/register" method="post">
-    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
-    <div>
-      username <input type="text" name="username">
+<!-- partial:index.partial.html -->
+<nav id="scanfcode" class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" id="toogle-button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+       <span class="glyphicon glyphicon-menu-hamburger"></span>                     
+      </button>
+      <a id="logo" class="navbar-brand" href="#">明石高専学生食堂システム</a>
     </div>
-    <div>
-      password <input type="password" name="password">
+    <div class="collapse navbar-collapse" id="myNavbar">
+ 
+      <ul id="link" class="nav navbar-nav navbar-right">
+         <li class="dropdown" id="first-link">
+     
+        <li><a href='/login'>Login</a></li>
+        <li><a href='/history'>History</a></li>
+        
+      </ul>
     </div>
-    <div>
-      <input type="submit">
+  </div>
+</nav>
+<html>
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <title>Register</title>
+</head>
+
+<body>
+  <div class="main">
+    <p class="sign" align="center">Register</p>
+    <form class="form1">
+      <input class="un " type="text" align="center" placeholder="Username">
+      <input class="pass" type="password" align="center" placeholder="Password">
+      <a class="submit" align="center">Register</a>
     </div>
-  </form>
+     
+</body>
+
+</html>
+<body>
+  
+</body>
+</html>
+<!-- partial -->
+  
 </body>
 </html>
