@@ -44,27 +44,27 @@
           <img class="menu-item-image" src="https://dummyimage.com/600x400/000/fff" alt="Bruschetta">
           <div class="menu-item-text">
             <span class="menu-item-class">Aセット</span>
-            <span class="menu-item-available">{{aset.availability}}</span>
+            <span class="menu-item-available">{{ABMenu.a_out_of_stock}</span>
             <h4 class="menu-item-heading">
-              <span class="menu-item-name">{{aset.name}}</span>
+              <span class="menu-item-name">{{ABMenu.a_menu}}</span>
               
-              <span class="menu-item-price">¥{{aset.price}}</span>
+              <span class="menu-item-price">¥{{ABMenu.a_price}}</span>
             </h4>
             <p class="menu-item-description">
-             {{aset.calories}} kcal
+             {{ABMenu.calorie}} kcal
             </p>
           </div>
         </div>
         <div class="menu-item" onclick="togglePop()">
-          <img class="menu-item-image" src="https://dummyimage.com/600x400/0f0/fff" alt="{aset.name}">
+          <img class="menu-item-image" src="https://dummyimage.com/600x400/0f0/fff" alt="{{ABMenu.b_menu}}">
           <div class="menu-item-text">
-              <span class="menu-item-class">Bセット</span><span class="menu-item-available">{{bset.availability}}</span>
+              <span class="menu-item-class">Bセット</span><span class="menu-item-available">{{ABMenu.b_out_of_stock}}</span>
             <h4 class="menu-item-heading">
-              <span class="menu-item-name">{{bset.name}}</span>
-              <span class="menu-item-price">¥{{bset.price}}</span>
+              <span class="menu-item-name">{{ABMenu.b_menu}}</span>
+              <span class="menu-item-price">¥{{ABMenu.b_price}}</span>
             </h4>
             <p class="menu-item-description">
-              {{bset.calories}} kcal
+              {{ABMenu.b_calories}} kcal
             </p>
           </div>
         </div>
@@ -74,62 +74,131 @@
       </h4>
         <div class="menu-group">
           <div class="menu-item" onclick="togglePop()">
-            <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt="Bruschetta">
+            <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt={{PermMenu.menu[0]}}>
               <div class="menu-item-text">
                 <h4 class="menu-item-heading">
-                <span class="menu-item-name">Bruschetta</span>
-              <span class="menu-item-price">¥12.90</span>
+                <span class="menu-item-name">{{PermMenu.menu[0]}}</span>
+              <span class="menu-item-price">{{PermMenu.price[0]}}</span>
             </h4>
             <p class="menu-item-description">
-              〇〇 kcal
+              {{PermMenu.calorie[0]}} kcal
             </p>
           </div>
         </div>
-        <div class="menu-item" onclick="togglePop()">
-          <img class="menu-item-image" src="https://dummyimage.com/600x400/00f/000" alt="Bruschetta">
-          <div class="menu-item-text">
-            <h4 class="menu-item-heading">
-              <span class="menu-item-name">Bruschetta</span>
-              <span class="menu-item-price">¥12.90</span>
-            </h4>
-            <p class="menu-item-description">
-              〇〇 kcal
-            </p>
-          </div>
-        </div>
+        <div class="menu-group">
           <div class="menu-item" onclick="togglePop()">
-          <img class="menu-item-image" src="https://dummyimage.com/600x400/00f/000" alt="Bruschetta">
-          <div class="menu-item-text">
-            <h4 class="menu-item-heading">
-              <span class="menu-item-name">Bruschetta</span>
-              <span class="menu-item-price">¥12.90</span>
+            <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt={{PermMenu.menu[1]}}>
+              <div class="menu-item-text">
+                <h4 class="menu-item-heading">
+                <span class="menu-item-name">{{PermMenu.menu[1]}}</span>
+              <span class="menu-item-price">{{PermMenu.price[1]}}</span>
             </h4>
             <p class="menu-item-description">
-              〇〇 kcal
+              {{PermMenu.calorie[1]}} kcal
             </p>
           </div>
         </div>
+        <div class="menu-group">
           <div class="menu-item" onclick="togglePop()">
-          <img class="menu-item-image" src="https://dummyimage.com/600x400/00f/000" alt="Bruschetta">
-          <div class="menu-item-text">
-            <h4 class="menu-item-heading">
-              <span class="menu-item-name">Bruschetta</span>
-              <span class="menu-item-price">¥12.90</span>
+            <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt={{PermMenu.menu[2]}}>
+              <div class="menu-item-text">
+                <h4 class="menu-item-heading">
+                <span class="menu-item-name">{{PermMenu.menu[2]}}</span>
+              <span class="menu-item-price">{{PermMenu.price[2]}}</span>
             </h4>
             <p class="menu-item-description">
-              〇〇 kcal
+              {{PermMenu.calorie[2]}} kcal
             </p>
           </div>
         </div>
+         <div class="menu-group">
           <div class="menu-item" onclick="togglePop()">
-          <img class="menu-item-image" src="https://dummyimage.com/600x400/00f/000" alt="Bruschetta">
-          <div class="menu-item-text">
-            <h4 class="menu-item-heading">
-              <span class="menu-item-name">Bruschetta</span>
-              <span class="menu-item-price">¥12.90</span>
+            <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt={{PermMenu.menu[3]}}>
+              <div class="menu-item-text">
+                <h4 class="menu-item-heading">
+                <span class="menu-item-name">{{PermMenu.menu[3]}}</span>
+              <span class="menu-item-price">{{PermMenu.price[3]}}</span>
             </h4>
             <p class="menu-item-description">
-              〇〇 kcal
+              {{PermMenu.calorie[3]}} kcal
+            </p>
+          </div>
+        </div>
+        <div class="menu-group">
+          <div class="menu-item" onclick="togglePop()">
+            <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt={{PermMenu.menu[4]}}>
+              <div class="menu-item-text">
+                <h4 class="menu-item-heading">
+                <span class="menu-item-name">{{PermMenu.menu[4]}}</span>
+              <span class="menu-item-price">{{PermMenu.price[4]}}</span>
+            </h4>
+            <p class="menu-item-description">
+              {{PermMenu.calorie[4]}} kcal
+            </p>
+          </div>
+        </div>
+        <div class="menu-group">
+          <div class="menu-item" onclick="togglePop()">
+            <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt={{PermMenu.menu[5]}}>
+              <div class="menu-item-text">
+                <h4 class="menu-item-heading">
+                <span class="menu-item-name">{{PermMenu.menu[5]}}</span>
+              <span class="menu-item-price">{{PermMenu.price[5]}}</span>
+            </h4>
+            <p class="menu-item-description">
+              {{PermMenu.calorie[5]}} kcal
+            </p>
+          </div>
+        </div>
+        <div class="menu-group">
+          <div class="menu-item" onclick="togglePop()">
+            <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt={{PermMenu.menu[6]}}>
+              <div class="menu-item-text">
+                <h4 class="menu-item-heading">
+                <span class="menu-item-name">{{PermMenu.menu[6]}}</span>
+              <span class="menu-item-price">{{PermMenu.price[6]}}</span>
+            </h4>
+            <p class="menu-item-description">
+              {{PermMenu.calorie[6]}} kcal
+            </p>
+          </div>
+        </div>
+        <div class="menu-group">
+          <div class="menu-item" onclick="togglePop()">
+            <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt={{PermMenu.menu[7]}}>
+              <div class="menu-item-text">
+                <h4 class="menu-item-heading">
+                <span class="menu-item-name">{{PermMenu.menu[7]}}</span>
+              <span class="menu-item-price">{{PermMenu.price[7]}}</span>
+            </h4>
+            <p class="menu-item-description">
+              {{PermMenu.calorie[7]}} kcal
+            </p>
+          </div>
+        </div>
+        <div class="menu-group">
+          <div class="menu-item" onclick="togglePop()">
+            <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt={{PermMenu.menu[8]}}>
+              <div class="menu-item-text">
+                <h4 class="menu-item-heading">
+                <span class="menu-item-name">{{PermMenu.menu[8]}}</span>
+              <span class="menu-item-price">{{PermMenu.price[8]}}</span>
+            </h4>
+            <p class="menu-item-description">
+              {{PermMenu.calorie[8]}} kcal
+            </p>
+          </div>
+        </div>
+        <div class="menu-group">
+          <div class="menu-item" onclick="togglePop()">
+            <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt={{PermMenu.menu[9]}}>
+              <div class="menu-item-text">
+                <h4 class="menu-item-heading">
+                <span class="menu-item-name">{{PermMenu.menu[9]}}</span>
+              <span class="menu-item-price">{{PermMenu.price[9]}}</span>
+            </h4>
+            <p class="menu-item-description">
+              {{PermMenu.calorie[9]}} kcal
             </p>
           </div>
         </div>
@@ -167,6 +236,38 @@ let menu = "";
  for(let i = 0; i < targets.length; i++){
   targets[i].addEventListener("click",() => {
     if(i==0){
+      menu = "Aセット";
+      
+    }
+    if(i==1){
+      menu = "Bセット";
+      
+    }
+     if(i==2){
+      menu = {{PermMenu.menu[0]}};
+      
+    }
+    if(i==3){
+      menu = {{PermMenu.menu[1]}};
+      
+    }
+     if(i==4){
+      menu = {{PermMenu.menu[2]}};
+      
+    }
+    if(i==1){
+      menu = "Bセット";
+      
+    }
+     if(i==0){
+      menu = "Aセット";
+      
+    }
+    if(i==1){
+      menu = "Bセット";
+      
+    }
+     if(i==0){
       menu = "Aセット";
       
     }
