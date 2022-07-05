@@ -19,7 +19,7 @@ for i in json_load:
     menu = [date, amenu, aprice, acalorie, bmenu, bprice, bcalorie]
     a_b_menu.append(menu)
 
-json_open2 = open('parmanent.json', 'r')
+json_open2 = open('permanent.json', 'r')
 json_load2 = json.load(json_open2)
 
 parmanent_menu = []
@@ -28,5 +28,8 @@ for i in json_load2:
     price = i['price']
     calorie = i['calorie']
 
-    menu = [date, menu, price, calorie]
+    menu = f"PermMenu(menu='{menu}', price='{price}', calorie='{calorie}')"
     parmanent_menu.append(menu)
+
+for line in parmanent_menu:
+    print(line)
