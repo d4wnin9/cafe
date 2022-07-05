@@ -287,7 +287,9 @@ let menu = "";
   }, false);
 }
     function myEat() {
-      export default menu;
+      const request  = new XMLHttpRequest();
+      request.open('POST','/MenuClick/${JSON.stringtify(menu)}');
+      request.send();
     }
     function togglePop(){
       document.getElementById("popup-1")
