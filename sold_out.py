@@ -26,10 +26,12 @@ def sold_out():
 
         for i in pmenu_name:
             stock_p = request.form.get(i)
-            if stock_p != None: break
+            if stock_p != None:
+                p_out_name = i
+                break
         if stock_p != None:
             for i in pmenu_name:
-                p_soldout = db.session.query(PermMenu).filter(PermMenu.menu = pmenu_name[i]).one_or_none
+                p_soldout = db.session.query(PermMenu).filter(PermMenu.menu = p_out_name).one_or_none
                 if p_soldout != None:
                     p_soldout.out_of_stock = True
                     break
