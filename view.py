@@ -9,13 +9,9 @@ from util import o2s, s2o
 
 
 def index():
-    # authed
-    if current_user.is_authenticated:
-        a_b_menu = ABMenu.query.filter(ABMenu.date == datetime.date.today()).first()
-        return render_template('main.html', a_b_menu=a_b_menu, PermMenu=PermMenu)
-    
-    # unauthed
-    return 'Login -> <a href="/login">/login</a>'
+    a_b_menu = ABMenu.query.filter(ABMenu.date == datetime.date.today()).first()
+    perm_menu = db.session.query(PermMenu).all()
+    return render_template('main.html', a_b_menu=a_b_menu, perm_menu=perm_menu, authed=current_user.is_authenticated)
 
 def register():
     # GET

@@ -19,14 +19,19 @@
       <button type="button" id="toogle-button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
        <span class="glyphicon glyphicon-menu-hamburger"></span>                     
       </button>
-      <a id="logo" class="navbar-brand" href="#">明石高専学生食堂システム</a>
+      <a id="logo" class="navbar-brand" href="/">明石高専学生食堂システム</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
  
       <ul id="link" class="nav navbar-nav navbar-right">
-         <li class="dropdown" id="first-link">
-        <li><a href='/login'>Login</a></li>
-        <li><a href='/history'>History</a></li>
+        <li class="dropdown" id="first-link">
+          {% if authed %}
+            <a href='/history'>History</a>
+            <a href='/logout'>Logout</a>
+          {% else %}
+            <a href='/login'>Login</a>
+          {% endif %}
+        </li>
         
       </ul>
     </div>
@@ -44,9 +49,9 @@
           <img class="menu-item-image" src="https://dummyimage.com/600x400/000/fff" alt="Bruschetta">
           <div class="menu-item-text">
             <span class="menu-item-class">Aセット</span>
-            <span class="menu-item-available">{{ABMenu.a_out_of_stock}</span>
+            <span class="menu-item-available">{{a_b_menu.a_out_of_stock}</span>
             <h4 class="menu-item-heading">
-              <span class="menu-item-name">{{ABMenu.a_menu}}</span>
+              <span class="menu-item-name">{{a_b_menu.a_menu}}</span>
               
               <span class="menu-item-price">¥{{ABMenu.a_price}}</span>
             </h4>
