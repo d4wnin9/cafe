@@ -12,7 +12,6 @@
 
 </head>
 <body>
-<!-- partial:index.partial.html -->
 <nav id="scanfcode" class="navbar">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -22,7 +21,6 @@
       <a id="logo" class="navbar-brand" href="/">明石高専学生食堂システム</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
- 
       <ul id="link" class="nav navbar-nav navbar-right">
         <li class="dropdown" id="first-link">
           {% if authed %}
@@ -32,7 +30,6 @@
             <a href='/login'>Login</a>
           {% endif %}
         </li>
-        
       </ul>
     </div>
   </div>
@@ -45,39 +42,47 @@
         日変わりメニュー
       </h4>
       <div class="menu-group">
-        <div class="menu-item" onclick="togglePop()" >
-          <img class="menu-item-image" src="https://dummyimage.com/600x400/000/fff" alt="Bruschetta">
+        <div class="menu-item">
+          <img class="menu-item-image" src="https://dummyimage.com/600x400/000/fff">
           <div class="menu-item-text">
             <span class="menu-item-class">Aセット</span>
-            <span class="menu-item-available">{{a_b_menu.a_out_of_stock}</span>
+            {% if a_b_menu.a_out_of_stock == 'True' %}
+              <span class="menu-item-available">売り切れ</span>
+            {% endif %}
             <h4 class="menu-item-heading">
-              <span class="menu-item-name">{{a_b_menu.a_menu}}</span>
-              
-              <span class="menu-item-price">¥{{ABMenu.a_price}}</span>
+              <span class="menu-item-name">{{ a_b_menu.a_menu }}</span>
+              <span class="menu-item-price">¥{{ a_b_menu.a_price }}</span>
             </h4>
             <p class="menu-item-description">
-             {{ABMenu.calorie}} kcal
+              {{ a_b_menu.a_calorie }} kcal
             </p>
             <form action="/" method="post">
-            <input class="submit" type="submit" value="食べた" name="a_ate">
-            <input class="submit" type="submit" value="売り切れ" name="a_out">
+              {%  if authed %}
+                <input class="submit" type="submit" value="食べた" name="a_ate">
+              {% endif %}
+              <input class="submit" type="submit" value="売り切れ" name="a_out">
             </form>
           </div>
         </div>
-        <div class="menu-item" onclick="togglePop()">
-          <img class="menu-item-image" src="https://dummyimage.com/600x400/0f0/fff" alt="{{ABMenu.b_menu}}">
+        <div class="menu-item">
+          <img class="menu-item-image" src="https://dummyimage.com/600x400/0f0/fff">
           <div class="menu-item-text">
-              <span class="menu-item-class">Bセット</span><span class="menu-item-available">{{ABMenu.b_out_of_stock}}</span>
+            <span class="menu-item-class">Bセット</span>
+              {% if a_b_menu.b_out_of_stock == 'True' %}
+                <span class="menu-item-available">売り切れ</span>
+              {% endif %}
             <h4 class="menu-item-heading">
-              <span class="menu-item-name">{{ABMenu.b_menu}}</span>
-              <span class="menu-item-price">¥{{ABMenu.b_price}}</span>
+              <span class="menu-item-name">{{ a_b_menu.b_menu }}</span>
+              <span class="menu-item-price">¥{{ a_b_menu.b_price }}</span>
             </h4>
             <p class="menu-item-description">
-              {{ABMenu.b_calories}} kcal
+              {{a_b_menu.b_calorie}} kcal
             </p>
             <form action="/" method="post">
-            <input class="submit" type="submit" value="食べた" name="b_ate">
-            <input class="submit" type="submit" value="売り切れ" name="b_out">
+              {% if authed %}
+                <input class="submit" type="submit" value="食べた" name="b_ate">
+              {% endif %}
+              <input class="submit" type="submit" value="売り切れ" name="b_out">
             </form>
           </div>
         </div>
@@ -86,232 +91,30 @@
         常設メニュー
       </h4>
         <div class="menu-group">
-          <div class="menu-item" onclick="togglePop()">
-            <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt={{PermMenu.menu[0]}}>
-              <div class="menu-item-text">
-                <h4 class="menu-item-heading">
-                <span class="menu-item-name">{{PermMenu.menu[0]}}</span>
-              <span class="menu-item-price">{{PermMenu.price[0]}}</span>
-            </h4>
-            <p class="menu-item-description">
-              {{PermMenu.calorie[0]}} kcal
-            </p>
-          </div>
+          {% for menu in perm_menu %}
+            <div class="menu-item">
+              <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000">
+                <div class="menu-item-text">
+                  <h4 class="menu-item-heading">
+                    <span class="menu-item-name">{{ menu.menu }}</span>
+                    <span class="menu-item-price">{{ menu.price }}</span>
+                  </h4>
+                  <p class="menu-item-description">
+                    {{ menu.calorie }} kcal
+                  </p>
+                  <form action="/" method="post">
+                    <input type="hidden", value="{{ menu.id }}", name=id>
+                    {% if authed %}
+                      <input class="submit" type="submit" value="食べた" name="p_ate">
+                    {% endif %}
+                    <input class="submit" type="submit" value="売り切れ" name="p_out">
+                  </form>
+                </div>
+            </div>
+          {% endfor %}
         </div>
-        <div class="menu-group">
-          <div class="menu-item" onclick="togglePop()">
-            <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt={{PermMenu.menu[1]}}>
-              <div class="menu-item-text">
-                <h4 class="menu-item-heading">
-                <span class="menu-item-name">{{PermMenu.menu[1]}}</span>
-              <span class="menu-item-price">{{PermMenu.price[1]}}</span>
-            </h4>
-            <p class="menu-item-description">
-              {{PermMenu.calorie[1]}} kcal
-            </p>
-          </div>
-        </div>
-        <div class="menu-group">
-          <div class="menu-item" onclick="togglePop()">
-            <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt={{PermMenu.menu[2]}}>
-              <div class="menu-item-text">
-                <h4 class="menu-item-heading">
-                <span class="menu-item-name">{{PermMenu.menu[2]}}</span>
-              <span class="menu-item-price">{{PermMenu.price[2]}}</span>
-            </h4>
-            <p class="menu-item-description">
-              {{PermMenu.calorie[2]}} kcal
-            </p>
-          </div>
-        </div>
-         <div class="menu-group">
-          <div class="menu-item" onclick="togglePop()">
-            <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt={{PermMenu.menu[3]}}>
-              <div class="menu-item-text">
-                <h4 class="menu-item-heading">
-                <span class="menu-item-name">{{PermMenu.menu[3]}}</span>
-              <span class="menu-item-price">{{PermMenu.price[3]}}</span>
-            </h4>
-            <p class="menu-item-description">
-              {{PermMenu.calorie[3]}} kcal
-            </p>
-          </div>
-        </div>
-        <div class="menu-group">
-          <div class="menu-item" onclick="togglePop()">
-            <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt={{PermMenu.menu[4]}}>
-              <div class="menu-item-text">
-                <h4 class="menu-item-heading">
-                <span class="menu-item-name">{{PermMenu.menu[4]}}</span>
-              <span class="menu-item-price">{{PermMenu.price[4]}}</span>
-            </h4>
-            <p class="menu-item-description">
-              {{PermMenu.calorie[4]}} kcal
-            </p>
-          </div>
-        </div>
-        <div class="menu-group">
-          <div class="menu-item" onclick="togglePop()">
-            <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt={{PermMenu.menu[5]}}>
-              <div class="menu-item-text">
-                <h4 class="menu-item-heading">
-                <span class="menu-item-name">{{PermMenu.menu[5]}}</span>
-              <span class="menu-item-price">{{PermMenu.price[5]}}</span>
-            </h4>
-            <p class="menu-item-description">
-              {{PermMenu.calorie[5]}} kcal
-            </p>
-          </div>
-        </div>
-        <div class="menu-group">
-          <div class="menu-item" onclick="togglePop()">
-            <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt={{PermMenu.menu[6]}}>
-              <div class="menu-item-text">
-                <h4 class="menu-item-heading">
-                <span class="menu-item-name">{{PermMenu.menu[6]}}</span>
-              <span class="menu-item-price">{{PermMenu.price[6]}}</span>
-            </h4>
-            <p class="menu-item-description">
-              {{PermMenu.calorie[6]}} kcal
-            </p>
-          </div>
-        </div>
-        <div class="menu-group">
-          <div class="menu-item" onclick="togglePop()">
-            <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt={{PermMenu.menu[7]}}>
-              <div class="menu-item-text">
-                <h4 class="menu-item-heading">
-                <span class="menu-item-name">{{PermMenu.menu[7]}}</span>
-              <span class="menu-item-price">{{PermMenu.price[7]}}</span>
-            </h4>
-            <p class="menu-item-description">
-              {{PermMenu.calorie[7]}} kcal
-            </p>
-          </div>
-        </div>
-        <div class="menu-group">
-          <div class="menu-item" onclick="togglePop()">
-            <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt={{PermMenu.menu[8]}}>
-              <div class="menu-item-text">
-                <h4 class="menu-item-heading">
-                <span class="menu-item-name">{{PermMenu.menu[8]}}</span>
-              <span class="menu-item-price">{{PermMenu.price[8]}}</span>
-            </h4>
-            <p class="menu-item-description">
-              {{PermMenu.calorie[8]}} kcal
-            </p>
-          </div>
-        </div>
-        <div class="menu-group">
-          <div class="menu-item" onclick="togglePop()">
-            <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt={{PermMenu.menu[9]}}>
-              <div class="menu-item-text">
-                <h4 class="menu-item-heading">
-                <span class="menu-item-name">{{PermMenu.menu[9]}}</span>
-              <span class="menu-item-price">{{PermMenu.price[9]}}</span>
-            </h4>
-            <p class="menu-item-description">
-              {{PermMenu.calorie[9]}} kcal
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
-
-<div class="popup" id="popup-1">
-   <div class="content">
-    <div class="close-btn" onclick="togglePop(menu)">
-     x</div>
-    <h3>
-      CHECK LIST
-     </h3> 
-     <p>
-       このメニューを食べました！
-     </p>
-     <input type="checkbox" id="check1" name="eatmenu" value="ate">
-     <p></p>
-      <p>
-       このメニューが売り切れました！
-      </p>
-     <input type="checkbox" id="check2" name="runout" value="runout">
-     <p></p>
-     <button onclick="myEat()" id="send-butt">送信</button>
-     
-    </div>
-  </div>
-</body>
-</html>
-<script>
-  let targets = document.getElementsByClassName("menu-item");
-let menu = "";
- for(let i = 0; i < targets.length; i++){
-  targets[i].addEventListener("click",() => {
-    if(i==0){
-      menu = "Aセット";
-      
-    }
-    if(i==1){
-      menu = "Bセット";
-      
-    }
-    if(i==2){
-      menu = {{PermMenu.menu[0]}};
-      
-    }
-    if(i==3){
-      menu = {{PermMenu.menu[1]}};
-      
-    }
-    if(i==4){
-      menu = {{PermMenu.menu[2]}};
-      
-    }
-    if(i==5){
-      menu = {{PermMenu.menu[3]}};
-      
-    }
-    if(i==6){
-      menu = {{PermMenu.menu[4]}};
-      
-    }
-    if(i==7){
-      menu = {{PermMenu.menu[5]}};
-      
-    }
-     if(i==8){
-      menu = {{PermMenu.menu[6]}};
-      
-    }
-    if(i==9){
-      menu = {{PermMenu.menu[7]}};
-      
-    }
-    if(i==10){
-      menu = {{PermMenu.menu[8]}};
-      
-    }
-    if(i==11){
-      menu = {{PermMenu.menu[9]}};
-      
-    }
- 
-  }, false);
-}
-    function myEat(menu, stock) {
-      const request  = new XMLHttpRequest();
-      request.open('POST','/');
-      request.send(menu=menu&out_of_stock=out_of_stock);
-    }
-    function togglePop(){
-      document.getElementById("popup-1")
-      .classList.toggle("active");
-     
-      
-    }
-</script>
-<!-- partial -->
-  
 </body>
 </html>

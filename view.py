@@ -66,65 +66,35 @@ def history():
     date_menu_price_calorie = s2o(user.date_menu_price_calorie)
     return render_template('history.html', user=user, date_menu_price_calorie=date_menu_price_calorie)
 
+def sold_out():
+    if request.method == 'POST':
+        stock_a = request.form.get("a_out")
+        stock_b = request.form.get("b_out")
+
+        if stock_a != None:
+            a_soldout = db.session.query(ABMenu).filter(ABMenu.date = datetime.date.today).one_or_none
+            a_soldout.a_out_of_stock = True
+            db.session.commit()
+        elif stock_b != None:
+            b_soldout = db.session.query(ABMenu).filter(ABMenu.date = datetime.date.today).one_or_none
+            b_soldout.b_out_of_stock = True
+            db.session.commit()
+
+        for i in pmenu_name:
+            stock_p = request.form.get(i)
+            if stock_p != None:
+                p_out_name = i
+                break
+        if stock_p != None:
+            for i in pmenu_name:
+                p_soldout = db.session.query(PermMenu).filter(PermMenu.menu = p_out_name).one_or_none
+                if p_soldout != None:
+                    p_soldout.out_of_stock = True
+                    break
+            db.session.commit()
+
 
 # DANGER ZONE
-
-def add_menu():
-    # TEST
-    menu_list = [
-        ABMenu(
-            date='7-3',
-            a_menu='焼き餃子の豆板醤ソースがけ',
-            a_price=380,
-            a_calorie=706,
-            b_menu='豚肉の味噌炒め丼',
-            b_price=320,
-            b_calorie=675
-        ),
-        ABMenu(
-            date='7-4',
-            a_menu='和風おろしハンバーグ',
-            a_price=380,
-            a_calorie=697,
-            b_menu='中華丼',
-            b_price=320,
-            b_calorie=599
-        ),
-        ABMenu(
-            date='7-5',
-            a_menu='牛肉の南蛮焼き',
-            a_price=380,
-            a_calorie=721,
-            b_menu='チキン味噌カツ丼',
-            b_price=320,
-            b_calorie=764
-        ),
-        ABMenu(
-            date='7-6',
-            a_menu='白身魚の一口竜田揚げと串カツ',
-            a_price=380,
-            a_calorie=590,
-            b_menu='照り焼きチキン丼',
-            b_price=320,
-            b_calorie=660
-        ),
-        PermMenu(menu='カレーライス', price='250', calorie='596'),
-        PermMenu(menu='カツカレー', price='330', calorie='832'),
-        PermMenu(menu='親子丼', price='280', calorie='698'),
-        PermMenu(menu='カツ丼', price='280', calorie='944'),
-        PermMenu(menu='カレーうどん', price='290', calorie='650'),
-        PermMenu(menu='味噌ラーメン', price='210', calorie='530'),
-        PermMenu(menu='醤油ラーメン', price='210', calorie='432'),
-        PermMenu(menu='とんこつラーメン', price='210', calorie='476'),
-        PermMenu(menu='かけうどん', price='160', calorie='325'),
-        PermMenu(menu='かけそば', price='160', calorie='320'),
-        PermMenu(menu='ライス(210g)', price='100', calorie='386')
-    ]
-    db.session.add_all(menu_list)
-    db.session.commit()
-
-    return redirect(url_for('index'))
-
 def set_menu():
     db.session.query(PermMenu).delete()
     db.session.query(ABMenu).delete()
