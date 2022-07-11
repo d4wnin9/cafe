@@ -23,7 +23,6 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul id="link" class="nav navbar-nav navbar-right">
         <li class="dropdown" id="first-link">
-          <li><a href='/login'>Login</a></li>
           <li><a href='/logout'>Logout</a></li>
         </li>
       </ul>
@@ -46,7 +45,7 @@
 </div>
 <div class = "user-menu">
   <div class="menu-group">
-    {% for line in date_menu_price_calorie %}
+    {% for line in date_menu_price_calorie|reverse %}
       <div class="menu-item">
         <!--
         <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt="Bruschetta">

@@ -41,12 +41,14 @@
 <body>
   <div class="main">
     <p class="sign" align="center">Register</p>
-    <form class="form1">
+    <p class="error" align="center">{% if error %}{{ error }}{% endif %}</p>
+    <form class="form1" action="/register" method="post">
       <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
-      <input class="un " type="text" align="center" placeholder="Username">
-      <input class="pass" type="password" align="center" placeholder="Password">
-      <a class="submit" align="center">Register</a>
-    </div>
+      <input class="un" type="text" align="center" placeholder="Username" name="username">
+      <input class="pass" type="password" align="center" placeholder="Password" name="password">
+      <input class="submit" type="submit" align="center" value="Register">
+    </form>
+  </div>
 </body>
 
 </html>

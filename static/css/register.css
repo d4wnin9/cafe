@@ -1,7 +1,7 @@
 body
 {
   background: white;
-  font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro";
+  font-family: 'Ubuntu', sans-serif;
 }
 /* navigation bar */
 #scanfcode

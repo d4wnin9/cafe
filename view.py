@@ -73,6 +73,7 @@ def register():
 
     # POST
     username = request.form.get('username')
+    print(username)
     try:
         user = LoginUser.query.filter(LoginUser.username == username).one_or_none()
         if user == None:
@@ -116,7 +117,10 @@ def logout():
 def history():
     username = current_user.username
     user = LoginUser.query.filter(LoginUser.username == username).one_or_none()
-    date_menu_price_calorie = s2o(user.date_menu_price_calorie)
+    try:
+        date_menu_price_calorie = s2o(user.date_menu_price_calorie)
+    except:
+        date_menu_price_calorie = []
     return render_template('history.html', user=user, date_menu_price_calorie=date_menu_price_calorie)
 
 
