@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Register | 明石高専学生食堂システム</title>
-  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Encode+Sans" rel="stylesheet"> <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
-
+  <link href="https://fonts.googleapis.com/css?family=Encode+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -18,14 +17,13 @@
       <button type="button" id="toogle-button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
        <span class="glyphicon glyphicon-menu-hamburger"></span>
       </button>
-      <a id="logo" class="navbar-brand" href="#">明石高専学生食堂システム</a>
+      <a id="logo" class="navbar-brand" href="/">明石高専学生食堂システム</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul id="link" class="nav navbar-nav navbar-right">
-         <li class="dropdown" id="first-link">
-        <li><a href='/login'>Login</a></li>
-        <li><a href='/history'>History</a></li>
-
+        <li class="dropdown" id="first-link">
+          <li><a href='/login'>Login</a></li>
+        </li>
       </ul>
     </div>
   </div>
