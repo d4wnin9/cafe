@@ -89,6 +89,8 @@ body
   flex-shrink: 0;
   object-fit: cover;
   margin-right: 1.5em;
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
   border-radius: 25px;
 
 }
@@ -152,7 +154,7 @@ h1 {
 
 h4 {
  font-weight: 100;
- font-size: 25px;
+ font-size: 19px;
 }
 
 .popup .content {
