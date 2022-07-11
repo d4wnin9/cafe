@@ -74,8 +74,6 @@ body
   background: rgb(214, 234, 248 );
   border-radius: 25px;
   color:#00004d;
- 
- 
 }
 
 .menu-item {
@@ -84,7 +82,6 @@ body
   padding: 1em;
   border-radius: 25px;
   color:#00004d;
-  
 }
 
 .menu-item-image {
@@ -112,7 +109,6 @@ body
 
 .menu-item-class {
   margin-right: 3em;
-  
 }
 .menu-item-available{
   text-align:right;
@@ -180,7 +176,7 @@ h1 {
   font-size: 18px;
   font-weight: 500;
   background: #262626;
-  box-shadow:  8px 8px 15px #202020, 
+  box-shadow:  8px 8px 15px #202020,
               -8px -8px 15px #2c2c2c;
   transition: box-shadow .35s ease  !important;
   outline: none;
@@ -203,7 +199,7 @@ color:#00004d;
 transition: box-shadow .35s ease !important;
 outline: none;
 }
-.first-button:active {  
+.first-button:active {
 background: linear-gradient(145deg, #AED6F1, #AED6F2);
 border: none;
 }
@@ -221,5 +217,4 @@ transform: translate(-50%,-50%) scale(1);
  width: 30px;
  padding: 2px 5px 7px 5px;
  height: 30px;
- 
  }

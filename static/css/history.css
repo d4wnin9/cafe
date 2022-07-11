@@ -2,7 +2,6 @@ body
 {
   background: white;
   font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro";
-  
 }
 /* navigation bar */
 #scanfcode
@@ -54,7 +53,6 @@ body
 .user-inform{
     text-align: center;
     padding:1px;
-  
  }
 .menu-group {
   display: grid;
@@ -64,8 +62,6 @@ body
   background: rgb(214, 234, 248 );
   border-radius: 25px;
   color:#00004d;
- 
- 
 }
 
 .menu-item {
@@ -74,7 +70,6 @@ body
   padding: 1.5em;
   border-radius: 25px;
   color:#00004d;
-  
 }
 
 .menu-item-image {
@@ -99,7 +94,6 @@ body
 
 .menu-item-class {
   margin-right: 1.5em;
-  
 }
 .menu-item-name {
   margin-right: 1.5em;

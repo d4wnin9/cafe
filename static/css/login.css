@@ -2,7 +2,6 @@ body
 {
   background: white;
   font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro";
-  
 }
 /* navigation bar */
 #scanfcode
@@ -61,7 +60,7 @@ body
 
 .menu-group-heading {
   padding: 1em;
-  align-item : center;
+  align-items : center;
   color:#00004d;
 }
 
@@ -73,8 +72,6 @@ body
   background: rgb(214, 234, 248 );
   border-radius: 25px;
   color:#00004d;
- 
- 
 }
 
 .menu-item {
@@ -83,7 +80,6 @@ body
   padding: 1.5em;
   border-radius: 25px;
   color:#00004d;
-  
 }
 
 .menu-item-image {
@@ -108,7 +104,6 @@ body
 
 .menu-item-class {
   margin-right: 1.5em;
-  
 }
 .menu-item-name {
   margin-right: 1.5em;
@@ -139,7 +134,6 @@ body
         background-color: rgb(235, 245, 251);
         font-family: 'Ubuntu', sans-serif;
     }
-    
     .main {
         background-color: #FFFFFF;
         width: 400px;
@@ -148,7 +142,7 @@ body
         border-radius: 1.5em;
         box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
     }
-    
+
     .login {
         padding-top: 40px;
         color:#00004d;;
@@ -156,7 +150,7 @@ body
         font-weight: bold;
         font-size: 23px;
     }
-    
+
     .un {
     width: 76%;
     color: rgb(38, 50, 56);
@@ -176,11 +170,11 @@ body
     margin-bottom: 27px;
     font-family: 'Ubuntu', sans-serif;
     }
-    
+
     form.form1 {
         padding-top: 40px;
     }
-    
+
     .pass {
             width: 76%;
     color: rgb(38, 50, 56);
@@ -200,17 +194,15 @@ body
     margin-bottom: 27px;
     font-family: 'Ubuntu', sans-serif;
     }
-    
-   
+
     .un:focus, .pass:focus {
         border: 2px solid rgba(0, 0, 0, 0.18) !important;
-        
     }
 
     .error {
       color: red;
     }
-    
+
     .submit {
       cursor: pointer;
         border-radius: 5em;
@@ -226,19 +218,20 @@ body
         font-size: 13px;
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
     }
-    
+
     .register {
         color: #AED6F1;
         padding-top: 15px;
     }
-    
+
     a {
         text-shadow: 0px 0px 3px rgba(104, 149, 127, 0.12);
         color: #AED6F1;
         text-decoration: none
     }
-    
+
     @media (max-width: 600px) {
-        .main {
-            border-radius: 0px;
-        }
+      .main {
+        border-radius: 0px;
+      }
+    }
