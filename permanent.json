@@ -1,57 +1,47 @@
 [
-  {
-    "name": "カレーライス",
-    "price": 250,
-    "calorie": 596
-  },
-  {
-    "name": "カツカレー",
-    "price": 330,
-    "calorie": 832
-  },
-  {
-    "name": "親子丼",
-    "price": 280,
-    "calorie": 698
-  },
-  {
-    "name": "カツ丼",
-    "price": 280,
-    "calorie": 944
-  },
-  {
-    "name": "カレーうどん",
-    "price": 290,
-    "calorie": 650
-  },
-  {
-    "name": "味噌ラーメン",
-    "price": 210,
-    "calorie": 530
-  },
-  {
-    "name": "醤油ラーメン",
-    "price": 210,
-    "calorie": 432
-  },
-  {
-    "name": "とんこつラーメン",
-    "price": 210,
-    "calorie": 476
-  },
-  {
-    "name": "かけうどん",
-    "price": 160,
-    "calorie": 325
-  },
-  {
-    "name": "かけそば",
-    "price": 160,
-    "calorie": 320
-  },
-  {
-    "name": "ライス(210g)",
-    "price": 100,
-    "calorie": 386
-  }
-]
+    {
+      "name": "ポークカレー",
+      "price": 250,
+      "calorie": 531
+    },
+    {
+      "name": "ポークカツカレー",
+      "price": 330,
+      "calorie": 753
+    },
+    {
+      "name": "親子丼",
+      "price": 280,
+      "calorie": 701
+    },
+    {
+      "name": "かつ丼",
+      "price": 280,
+      "calorie": 735
+    },
+    {
+      "name": "週替わりラーメン（醤油）",
+      "price": 210,
+      "calorie": 437
+    },
+    {
+      "name": "週替わりラーメン（味噌）",
+      "price": 210,
+      "calorie": 399
+    },
+    {
+      "name": "週替わりラーメン（とんこつ）",
+      "price": 210,
+      "calorie": 476
+    },
+    {
+      "name": "冷やしうどん・そば",
+      "price": 200,
+      "calorie": 352
+    },
+    {
+      "name": "ライス（２１０ｇ）",
+      "price": 100,
+      "calorie": 328
+    }
+  ]

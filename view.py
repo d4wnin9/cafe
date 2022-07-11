@@ -9,9 +9,62 @@ from util import o2s, s2o
 
 
 def index():
+    # GET
+    if request.method == 'GET':
+        a_b_menu = ABMenu.query.filter(ABMenu.date == datetime.date.today()).first()
+        perm_menu = db.session.query(PermMenu).all()
+        return render_template('main.html', a_b_menu=a_b_menu, perm_menu=perm_menu, current_user=current_user)
+
+    # POST
     a_b_menu = ABMenu.query.filter(ABMenu.date == datetime.date.today()).first()
-    perm_menu = db.session.query(PermMenu).all()
-    return render_template('main.html', a_b_menu=a_b_menu, perm_menu=perm_menu, authed=current_user.is_authenticated)
+    today = datetime.datetime.now().strftime('%Y/%m/%d')
+    ## default None
+    username = request.form.get('username')
+    a_ate = request.form.get('a_ate')
+    a_out = request.form.get('a_out')
+    b_ate = request.form.get('b_ate')
+    b_out = request.form.get('b_out')
+    p_id = request.form.get('p_id', type=int)
+    p_ate = request.form.get('p_ate')
+    p_out = request.form.get('p_out')
+
+    if username:
+        user = LoginUser.query.filter(LoginUser.username == username).one_or_none()
+        if user.date_menu_price_calorie == "":
+            date_menu_price_calorie = []
+        else:
+            date_menu_price_calorie = s2o(user.date_menu_price_calorie)
+
+        if a_ate:
+            date_menu_price_calorie.append([today, a_b_menu.a_menu, a_b_menu.a_price, a_b_menu.a_calorie])
+            user.calorie += a_b_menu.a_calorie
+            user.expense += a_b_menu.a_price
+        if b_ate:
+            date_menu_price_calorie.append([today, a_b_menu.b_menu, a_b_menu.b_price, a_b_menu.b_calorie])
+            user.calorie += a_b_menu.b_calorie
+            user.expense += a_b_menu.b_price
+        if p_ate:
+            menu = PermMenu.query.filter(PermMenu.id == p_id).first()
+            date_menu_price_calorie.append([today, menu.menu, menu.price, menu.calorie])
+            user.calorie += menu.calorie
+            user.expense += menu.price
+
+        date_menu_price_calorie = o2s(date_menu_price_calorie)
+        user.date_menu_price_calorie = date_menu_price_calorie
+
+
+    if a_out:
+        a_b_menu.a_out_of_stock = True
+    if b_out:
+        a_b_menu.b_out_of_stock = True
+    if p_out:
+        menu = PermMenu.query.filter(PermMenu.id == p_id).first()
+        print(menu)
+        menu.out_of_stock = True
+
+    db.session.commit()
+    return redirect(url_for('index'))
+
 
 def register():
     # GET
@@ -66,33 +119,6 @@ def history():
     date_menu_price_calorie = s2o(user.date_menu_price_calorie)
     return render_template('history.html', user=user, date_menu_price_calorie=date_menu_price_calorie)
 
-def sold_out():
-    if request.method == 'POST':
-        stock_a = request.form.get("a_out")
-        stock_b = request.form.get("b_out")
-
-        if stock_a != None:
-            a_soldout = db.session.query(ABMenu).filter(ABMenu.date = datetime.date.today).one_or_none
-            a_soldout.a_out_of_stock = True
-            db.session.commit()
-        elif stock_b != None:
-            b_soldout = db.session.query(ABMenu).filter(ABMenu.date = datetime.date.today).one_or_none
-            b_soldout.b_out_of_stock = True
-            db.session.commit()
-
-        for i in pmenu_name:
-            stock_p = request.form.get(i)
-            if stock_p != None:
-                p_out_name = i
-                break
-        if stock_p != None:
-            for i in pmenu_name:
-                p_soldout = db.session.query(PermMenu).filter(PermMenu.menu = p_out_name).one_or_none
-                if p_soldout != None:
-                    p_soldout.out_of_stock = True
-                    break
-            db.session.commit()
-
 
 # DANGER ZONE
 def set_menu():
@@ -101,7 +127,7 @@ def set_menu():
     db.session.commit()
 
     import json
-    files = ['AB_6_27_30.json']
+    files = ['AB_6_27_30.json', 'AB_7_1_29.json']
     a_b_menu_list = []
     perm_menu_list = []
     for file in files:
@@ -153,30 +179,3 @@ def delete_user():
     db.session.commit()
 
     return redirect(url_for('index'))
-
-def test_user():
-    user = LoginUser.query.filter(LoginUser.username == 'ponyo').one_or_none()
-    if user is None:
-        user = LoginUser()
-        user.username = 'ponyo'
-        user.password = generate_password_hash('sosuke')
-    db.session.add(user)
-    db.session.commit()
-    if user.date_menu_price_calorie == "":
-        date_menu_price_calorie = []
-    else:
-        print(type(user.date_menu_price_calorie))
-        date_menu_price_calorie = s2o(user.date_menu_price_calorie)
-    date_menu_price_calorie.append(["2022/07/01", "カレー", 700, 1000])
-    date_menu_price_calorie.append(["2022/07/02", "卵かけご飯", 400, 300])
-    date_menu_price_calorie.append(["2022/07/03", "唐揚げ定食", 700, 1200])
-    date_menu_price_calorie.append(["2022/07/04", "チョコレート", 200, 500])
-    date_menu_price_calorie = o2s(date_menu_price_calorie)
-    user.date_menu_price_calorie = date_menu_price_calorie
-    user.calorie = 2000
-    user.expense = 2000
-
-    db.session.add(user)
-    db.session.commit()
-
-    return redirect(url_for('login'))

@@ -19,12 +19,6 @@ def add_route(app: Flask):
     # history
     app.add_url_rule('/history', 'history', view.history)
 
-    # sold_out
-    app.add_url_rule('/sold_out/<menu>', 'sold_out', view.sold_out, methods=['POST'])
-
-    # ate
-    app.add_url_rule('/ate/<menu>', 'ate', view.ate, methods=['POST'])
-
 
     # set menu
     app.add_url_rule('/set-menu', 'set_menu', view.set_menu)
@@ -34,6 +28,3 @@ def add_route(app: Flask):
 
     # delete user
     app.add_url_rule('/delete-user', 'delete_user', view.delete_user)
-
-    # test user
-    app.add_url_rule('/test-user', 'test_user', view.test_user)
