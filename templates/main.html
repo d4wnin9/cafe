@@ -45,7 +45,7 @@
       </h4>
       <div class="menu-group">
         <div class="menu-item">
-          <img class="menu-item-image" src="https://dummyimage.com/600x400/000/fff">
+          <img class="menu-item-image" src="{{ url_for('static', filename='images/'+a_b_menu.a_menu+'.png') }}">
           <div class="menu-item-text">
             <span class="menu-item-class">Aセット</span>
             {% if a_b_menu.a_out_of_stock %}
@@ -71,7 +71,7 @@
           </div>
         </div>
         <div class="menu-item">
-          <img class="menu-item-image" src="https://dummyimage.com/600x400/0f0/fff">
+          <img class="menu-item-image" src="{{ url_for('static', filename='images/'+a_b_menu.b_menu+'.png') }}">
           <div class="menu-item-text">
             <span class="menu-item-class">Bセット</span>
               {% if a_b_menu.b_out_of_stock %}
@@ -103,7 +103,7 @@
         <div class="menu-group">
           {% for menu in perm_menu %}
             <div class="menu-item">
-              <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000">
+              <img class="menu-item-image" src="{{ url_for('static', filename='images/'+menu.menu+'.png') }}">
                 <div class="menu-item-text">
                   {% if menu.out_of_stock %}
                     <span class="menu-item-available">売り切れ</span>
