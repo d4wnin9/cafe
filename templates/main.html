@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <title>明石高専学生食堂システム</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -63,10 +65,10 @@
               {%  if current_user.is_authenticated %}
                 <input type="hidden" name="username" value="{{ current_user.username }}">
                 {% if not a_b_menu.a_out_of_stock %}
-                  <input class="submit" type="submit" value="食べた" name="a_ate">
+                  <input class="submit" type="submit" value="食べた 🍽" name="a_ate">
                 {% endif %}
               {% endif %}
-              <input class="submit" type="submit" value="売り切れ" name="a_out">
+              <input class="submit" type="submit" value="売り切れ 🚩" name="a_out">
             </form>
           </div>
         </div>
@@ -89,10 +91,10 @@
               {% if current_user.is_authenticated %}
                 <input type="hidden" name="username" value="{{ current_user.username }}">
                 {% if not a_b_menu.b_out_of_stock %}
-                  <input class="submit" type="submit" value="食べた" name="b_ate">
+                  <input class="submit" type="submit" value="食べた 🍽" name="b_ate">
                 {% endif %}
               {% endif %}
-              <input class="submit" type="submit" value="売り切れ" name="b_out">
+              <input class="submit" type="submit" value="売り切れ 🚩" name="b_out">
             </form>
           </div>
         </div>
@@ -121,10 +123,10 @@
                     {% if current_user.is_authenticated %}
                       <input type="hidden" name="username" value="{{ current_user.username }}">
                       {% if not menu.out_of_stock %}
-                        <input class="submit" type="submit" value="食べた" name="p_ate">
+                        <input class="submit" type="submit" value="食べた 🍽" name="p_ate">
                       {% endif %}
                     {% endif %}
-                    <input class="submit" type="submit" value="売り切れ" name="p_out">
+                    <input class="submit" type="submit" value="売り切れ 🚩" name="p_out">
                   </form>
                 </div>
             </div>

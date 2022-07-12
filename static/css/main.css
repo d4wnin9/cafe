@@ -1,7 +1,7 @@
 body
 {
   background: white;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Kosugi Maru', sans-serif;
   font-size : 13px;
 }
 #scanfcode
@@ -53,7 +53,7 @@ body
 }
 
 .menu {
-  font-family: "Hiragino Kaku Gothic Pro";
+  font-family: 'Kosugi Maru', sans-serif;
   font-size: 14px;
 }
 
@@ -67,7 +67,7 @@ body
   display: grid;
   grid-template-columns: 1fr;
   gap: 1em;
-  padding: 0.7em;
+  padding: 1em;
   background: rgb(214, 234, 248 );
   border-radius: 25px;
   color:#00004d;
@@ -81,6 +81,7 @@ body
   padding: 1em;
   border-radius: 25px;
   color:#00004d;
+  font-family: 'Kosugi Maru', sans-serif;
   
 }
 
@@ -99,6 +100,7 @@ body
 .menu-item-text {
   flex-grow: 1;
   font-size: 14 px;
+  font-family: 'Kosugi Maru', sans-serif;
 }
 
 .menu-item-heading {
@@ -107,6 +109,7 @@ body
   justify-content: space-between;
   margin: 0;
   align-items: center;
+  font-family: 'Kosugi Maru', sans-serif;
 }
 
 .menu-item-class {
@@ -116,23 +119,43 @@ body
   font-size: x-large;
   color: #fa6a48;
   text-align:right;
+  font-family: 'Kosugi Maru', sans-serif;
 }
 .menu-item-name {
   margin-right: 1.5em;
   margin-top: 1em;
   font-weight: 100;
+  font-family: 'Kosugi Maru', sans-serif;
 }
 
 .menu-item-price {
   margin-right: 0.5em;
   margin-top: 1em;
   font-weight: 100;
+  font-family: 'Kosugi Maru', sans-serif;
 }
 
 .menu-item-description {
   line-height: 1.6;
   margin-right: 1.5em;
   margin-top: 2em;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.submit{
+  cursor: pointer;
+  border-radius: 2em;
+  color: #fff;
+  background: rgba(22, 76, 167, 0.6);
+  border: 0;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-family: 'Kosugi Maru', sans-serif;
+  font-size: 13px;
+  box-shadow: 0 0 0px 8px rgba(0, 0, 0, 0.03);
+  
 }
 
 @media screen and (min-width: 992px) {
@@ -155,6 +178,7 @@ h1 {
  text-align: center;
  font-size: 32px;
  padding-bottom: 10px;
+ font-family: 'Kosugi Maru', sans-serif;
 }
 h4 {
  font-weight: 100;
