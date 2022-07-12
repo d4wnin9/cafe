@@ -48,7 +48,7 @@
           <img class="menu-item-image" src="https://dummyimage.com/600x400/000/fff">
           <div class="menu-item-text">
             <span class="menu-item-class">Aセット</span>
-            {% if a_b_menu.a_out_of_stock == True %}
+            {% if a_b_menu.a_out_of_stock %}
               <span class="menu-item-available">売り切れ</span>
             {% endif %}
             <h4 class="menu-item-heading">
@@ -62,7 +62,9 @@
               <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
               {%  if current_user.is_authenticated %}
                 <input type="hidden" name="username" value="{{ current_user.username }}">
-                <input class="submit" type="submit" value="食べた" name="a_ate">
+                {% if not a_b_menu.a_out_of_stock %}
+                  <input class="submit" type="submit" value="食べた" name="a_ate">
+                {% endif %}
               {% endif %}
               <input class="submit" type="submit" value="売り切れ" name="a_out">
             </form>
@@ -72,7 +74,7 @@
           <img class="menu-item-image" src="https://dummyimage.com/600x400/0f0/fff">
           <div class="menu-item-text">
             <span class="menu-item-class">Bセット</span>
-              {% if a_b_menu.b_out_of_stock == True %}
+              {% if a_b_menu.b_out_of_stock %}
                 <span class="menu-item-available">売り切れ</span>
               {% endif %}
             <h4 class="menu-item-heading">
@@ -86,7 +88,9 @@
               <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
               {% if current_user.is_authenticated %}
                 <input type="hidden" name="username" value="{{ current_user.username }}">
-                <input class="submit" type="submit" value="食べた" name="b_ate">
+                {% if not a_b_menu.b_out_of_stock %}
+                  <input class="submit" type="submit" value="食べた" name="b_ate">
+                {% endif %}
               {% endif %}
               <input class="submit" type="submit" value="売り切れ" name="b_out">
             </form>
@@ -101,7 +105,7 @@
             <div class="menu-item">
               <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000">
                 <div class="menu-item-text">
-                  {% if menu.out_of_stock == True %}
+                  {% if menu.out_of_stock %}
                     <span class="menu-item-available">売り切れ</span>
                   {% endif %}
                   <h4 class="menu-item-heading">
@@ -116,7 +120,9 @@
                     <input type="hidden", value="{{ menu.id }}", name="p_id">
                     {% if current_user.is_authenticated %}
                       <input type="hidden" name="username" value="{{ current_user.username }}">
-                      <input class="submit" type="submit" value="食べた" name="p_ate">
+                      {% if not menu.out_of_stock %}
+                        <input class="submit" type="submit" value="食べた" name="p_ate">
+                      {% endif %}
                     {% endif %}
                     <input class="submit" type="submit" value="売り切れ" name="p_out">
                   </form>
