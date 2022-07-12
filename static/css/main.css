@@ -111,9 +111,10 @@ body
 
 .menu-item-class {
   margin-right: 3em;
-  
 }
 .menu-item-available{
+  font-size: x-large;
+  color: #fa6a48;
   text-align:right;
 }
 .menu-item-name {
