@@ -14,7 +14,7 @@ class User(db.Model):
     expense = db.Column('expense', db.Integer, nullable=False, default=0)
     calorie = db.Column('calorie', db.Integer, nullable=False, default=0)
 
-class LoginUser(UserMixin, User): 
+class LoginUser(UserMixin, User):
     def get_id(self):
         return self.id
 
