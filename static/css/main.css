@@ -116,7 +116,7 @@ body
   margin-right: 3em;
 }
 .menu-item-available{
-  font-size: x-large;
+  font-size: 20px;
   color: #fa6a48;
   text-align:right;
   font-family: 'Kosugi Maru', sans-serif;
@@ -148,10 +148,12 @@ body
   color: #fff;
   background: rgba(22, 76, 167, 0.6);
   border: 0;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 25px;
+  padding-right: 25px;
   padding-bottom: 10px;
   padding-top: 10px;
+  margin-bottom: 1px;
+  margin-top: 1px;
   font-family: 'Kosugi Maru', sans-serif;
   font-size: 13px;
   box-shadow: 0 0 0px 8px rgba(0, 0, 0, 0.03);
