@@ -23,8 +23,5 @@ def add_route(app: Flask):
     # set menu
     app.add_url_rule('/set-menu', 'set_menu', view.set_menu)
 
-    # delete menu
-    app.add_url_rule('/delete-menu', 'delete_menu', view.delete_menu)
-
     # delete user
     app.add_url_rule('/delete-user', 'delete_user', view.delete_user)

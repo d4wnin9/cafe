@@ -59,7 +59,6 @@ def index():
         a_b_menu.b_out_of_stock = True
     if p_out:
         menu = PermMenu.query.filter(PermMenu.id == p_id).first()
-        print(menu)
         menu.out_of_stock = True
 
     db.session.commit()
@@ -85,7 +84,7 @@ def register():
             login_user(user, remember=True)
             return redirect(url_for('index'))
         else:
-            render_template('register.html', error='すでに使われている名前です')
+            return render_template('register.html', error='すでに使われている名前です')
     except Exception as e:
         return render_template('register.html', error=e)
 
@@ -166,14 +165,6 @@ def set_menu():
         )
         perm_menu_list.append(perm_menu)
     db.session.add_all(perm_menu_list)
-    db.session.commit()
-
-    return redirect(url_for('index'))
-
-
-def delete_menu():
-    db.session.query(PermMenu).delete()
-    db.session.query(ABMenu).delete()
     db.session.commit()
 
     return redirect(url_for('index'))

@@ -26,3 +26,6 @@ TEMPLATE_FOLDER = "templates"
 
 # Static folder
 STATIC_FOLDER = "static"
+
+# SSL context
+SSL_CONTEXT = ('pem/cert.pem', 'pem/key.pem')

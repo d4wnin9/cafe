@@ -39,4 +39,5 @@ if __name__ == '__main__':
         port=config.PORT,
         debug=config.DEBUG_MODE,
         threaded=config.THREADED,
+        ssl_context=config.SSL_CONTEXT,
     )
