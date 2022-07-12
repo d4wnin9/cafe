@@ -1,7 +1,7 @@
 body
 {
   background: white;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Kosugi Maru', sans-serif;
 }
 /* navigation bar */
 #scanfcode
@@ -72,6 +72,7 @@ body
   padding: 1.5em;
   border-radius: 25px;
   color:#00004d;
+  font-family: 'Kosugi Maru', sans-serif;
 }
 
 .menu-item-image {
