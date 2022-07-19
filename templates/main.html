@@ -66,9 +66,9 @@
                 <input type="hidden" name="username" value="{{ current_user.username }}">
                 {% if not a_b_menu.a_out_of_stock %}
                   <input class="submit" type="submit" value="食べた 🍽" name="a_ate">
+                  <input class="submit" type="submit" value="売り切れ 🚩" name="a_out">
                 {% endif %}
               {% endif %}
-              <input class="submit" type="submit" value="売り切れ 🚩" name="a_out">
             </form>
           </div>
         </div>
@@ -92,9 +92,9 @@
                 <input type="hidden" name="username" value="{{ current_user.username }}">
                 {% if not a_b_menu.b_out_of_stock %}
                   <input class="submit" type="submit" value="食べた 🍽" name="b_ate">
+                  <input class="submit" type="submit" value="売り切れ 🚩" name="b_out">
                 {% endif %}
               {% endif %}
-              <input class="submit" type="submit" value="売り切れ 🚩" name="b_out">
             </form>
           </div>
         </div>
@@ -124,9 +124,9 @@
                       <input type="hidden" name="username" value="{{ current_user.username }}">
                       {% if not menu.out_of_stock %}
                         <input class="submit" type="submit" value="食べた 🍽" name="p_ate">
+                        <input class="submit" type="submit" value="売り切れ 🚩" name="p_out">
                       {% endif %}
                     {% endif %}
-                    <input class="submit" type="submit" value="売り切れ 🚩" name="p_out">
                   </form>
                 </div>
             </div>
