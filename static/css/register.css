@@ -134,6 +134,9 @@ body
         background-color: rgb(235, 245, 251);
         font-family: 'Ubuntu', sans-serif;
     }
+    .error {
+      color: red;
+    }
     .main {
         background-color: #FFFFFF;
         width: 360px;
