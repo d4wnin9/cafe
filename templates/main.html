@@ -63,8 +63,8 @@
             <form action="/" method="post">
               <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
               {%  if current_user.is_authenticated %}
-                <input type="hidden" name="username" value="{{ current_user.username }}">
                 {% if not a_b_menu.a_out_of_stock %}
+                  <input type="hidden" name="username" value="{{ current_user.username }}">
                   <input class="submit" type="submit" value="食べた 🍽" name="a_ate">
                   <input class="submit" type="submit" value="売り切れ 🚩" name="a_out">
                 {% endif %}
@@ -89,8 +89,8 @@
             <form action="/" method="post">
               <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
               {% if current_user.is_authenticated %}
-                <input type="hidden" name="username" value="{{ current_user.username }}">
                 {% if not a_b_menu.b_out_of_stock %}
+                  <input type="hidden" name="username" value="{{ current_user.username }}">
                   <input class="submit" type="submit" value="食べた 🍽" name="b_ate">
                   <input class="submit" type="submit" value="売り切れ 🚩" name="b_out">
                 {% endif %}
@@ -121,8 +121,8 @@
                     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
                     <input type="hidden", value="{{ menu.id }}", name="p_id">
                     {% if current_user.is_authenticated %}
-                      <input type="hidden" name="username" value="{{ current_user.username }}">
                       {% if not menu.out_of_stock %}
+                        <input type="hidden" name="username" value="{{ current_user.username }}">
                         <input class="submit" type="submit" value="食べた 🍽" name="p_ate">
                         <input class="submit" type="submit" value="売り切れ 🚩" name="p_out">
                       {% endif %}
@@ -137,3 +137,4 @@
 </div>
 </body>
 </html>
+
