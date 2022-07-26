@@ -40,8 +40,10 @@
 </nav>
 </body>
 
+
 <div class="container">
-    <div class="menu">
+  <div class="menu">
+    {% if a_b_menu %}
       <h4 class="menu-group-heading">
         日変わりメニュー
       </h4>
@@ -99,6 +101,7 @@
           </div>
         </div>
       </div>
+      {% endif %}
       <h4 class="menu-group-heading">
         常設メニュー
       </h4>
@@ -137,4 +140,3 @@
 </div>
 </body>
 </html>
-
