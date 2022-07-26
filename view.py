@@ -11,12 +11,12 @@ from util import o2s, s2o
 def index():
     # GET
     if request.method == 'GET':
-        a_b_menu = ABMenu.query.filter(ABMenu.date == datetime.date.today()).first()
+        a_b_menu = ABMenu.query.filter(ABMenu.date == datetime.date.today()).one_or_none()
         perm_menu = db.session.query(PermMenu).all()
         return render_template('main.html', a_b_menu=a_b_menu, perm_menu=perm_menu, current_user=current_user)
 
     # POST
-    a_b_menu = ABMenu.query.filter(ABMenu.date == datetime.date.today()).first()
+    a_b_menu = ABMenu.query.filter(ABMenu.date == datetime.date.today()).one_or_none()
     today = datetime.datetime.now().strftime('%Y/%m/%d')
     ## default None
     username = request.form.get('username')
